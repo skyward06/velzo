@@ -39,7 +39,7 @@
 
         <div class="flex items-center" style="color: white">
             <x-heroicon-o-shopping-cart class="w-8 h-8" />
-            <span class="" style="font-size: 14px; font-weight: 800; margin-left: 10px; margin-right: 10px">0 Cart</span>
+            <a href="/cart" class="" style="font-size: 14px; font-weight: 800; margin-left: 10px; margin-right: 10px">0 Cart</a>
         </div>
 
     </div>
