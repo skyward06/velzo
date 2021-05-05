@@ -1,7 +1,9 @@
 <?php
 
+use App\Http\Livewire\Admin\AdminDashboard;
 use App\Http\Livewire\CartProduct;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\User\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -22,6 +24,16 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', HomeComponent::class);
 Route::get('/cart', CartProduct::class);
 
-Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
-    return view('dashboard');
-})->name('dashboard');
+// Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
+//     return view('dashboard');
+// })->name('dashboard');
+
+// User
+Route::middleware(['auth:sanctum', 'verified'])->group(function(){
+    Route::get('/user/dashboard', UserDashboard::class)->name('user.dashboard');
+});
+
+// Admin
+Route::middleware('auth:sanctum', 'verified')->group(function(){
+    Route::get('/admin/dashboard', AdminDashboard::class)->name('admin.dashboard');
+});

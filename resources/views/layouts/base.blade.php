@@ -27,6 +27,7 @@
                 @if (Auth::user()->utype === 'ADM')
                 <div class="flex flex-col mx-3 text-white">
                     <span class="" style="font-size: 12px" >Hello, {{ Auth::user()->name }}</span>
+                    <a href="{{ route('admin.dashboard') }}" style="font-size: 12px" >Dashboard</a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
                         class=""
@@ -38,6 +39,7 @@
                 @else
                 <div class="flex flex-col mx-3 text-white">
                     <span class="" style="font-size: 12px" >Hello, {{ Auth::user()->name }}</span>
+                    <a href="{{ route('user.dashboard') }}" style="font-size: 12px" >Dashboard</a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
                         class=""
