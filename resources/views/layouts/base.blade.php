@@ -22,19 +22,42 @@
     </div>
 
     <div class="flex justify-evenly">
-        <div class="flex flex-col mx-3 text-white">
-            <span class="" style="font-size: 12px" >Hello, Guest</span>
-            <span class="" style="font-size: 14px; font-weight: 800;" >Sign In</span>
-        </div>
+        @if (Route::has('login'))
+            @auth
+                @if (Auth::user()->utype === 'ADM')
+                <div class="flex flex-col mx-3 text-white">
+                    <span class="" style="font-size: 12px" >Hello, {{ Auth::user()->name }}</span>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
+                        class=""
+                        style="font-size: 14px; font-weight: 800;" >Logout</a>
+                    <form action="{{ route('logout') }}" id="logout-form" method="POST">
+                        @csrf
+                    </form>
+                </div>
+                @else
+                <div class="flex flex-col mx-3 text-white">
+                    <span class="" style="font-size: 12px" >Hello, {{ Auth::user()->name }}</span>
+                    <a href="{{ route('logout') }}"
+                        onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
+                        class=""
+                        style="font-size: 14px; font-weight: 800;" >Logout</a>
+                    <form action="{{ route('logout') }}" id="logout-form" method="POST">
+                        @csrf
+                    </form>
+                </div>
+                @endif
+                @else
+                <div class="mx-3 text-white">
+                    <span  class="mx-3 cursor-pointer" style="font-size: 14px; font-weight: 800;" > <a href="{{ route('login') }}">Sign In</a> </span>
+                    <span href="{{ route('logout') }}" class="mx-3 cursor-pointer" style="font-size: 14px; font-weight: 800" > <a href="{{ route('register') }}"> Sign Up</a></span>
+                </div>
+                @endif
+        @endif
 
         <div class="flex flex-col mx-3 text-white">
             <span class="" style="font-size: 12px" >Returns</span>
             <span class="" style="font-size: 14px; font-weight: 800;" >& Orders</span>
-        </div>
-
-        <div class="flex flex-col mx-3 text-white">
-            <span class="" style="font-size: 12px">Your</span>
-            <span class="" style="font-size: 14px; font-weight: 800" >Prime</span>
         </div>
 
         <div class="flex items-center" style="color: white">
