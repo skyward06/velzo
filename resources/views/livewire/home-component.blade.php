@@ -14,4 +14,12 @@
         @include('layouts.partials.shopCard')
     </div>
 
+    <div  class="w-full bg-gray-800 p-2 text-lg text-white text-center">Back to Top</div>
+
+    {{-- Footer --}}
+    <div class="">
+        @include('layouts.partials.footer')
+    </div>
+
+
 </main>
