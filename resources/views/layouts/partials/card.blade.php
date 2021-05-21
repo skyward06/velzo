@@ -7,6 +7,6 @@
             <div class="px-2 py-4">
                 <a href="#" class="inline-block bg-grey-lighter text-sm text-blue-500">Shop now</a>
             </div>
-        </>
+        </div>
     </div>
 </div>

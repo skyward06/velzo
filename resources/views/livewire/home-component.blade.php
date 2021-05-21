@@ -8,4 +8,10 @@
     <div class="">
         @include('layouts.partials.card')
     </div>
+
+    {{-- Shop Card Carousel --}}
+    <div class="">
+        @include('layouts.partials.shopCard')
+    </div>
+
 </main>
