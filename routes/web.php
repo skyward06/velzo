@@ -3,6 +3,7 @@
 use App\Http\Livewire\Admin\AdminDashboard;
 use App\Http\Livewire\CartProduct;
 use App\Http\Livewire\HomeComponent;
+use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboard;
 use Illuminate\Support\Facades\Route;
 
@@ -23,6 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeComponent::class);
 Route::get('/cart', CartProduct::class);
+Route::get('/shop', ShopComponent::class);
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');
