@@ -24,7 +24,7 @@ use Illuminate\Support\Facades\Route;
 
 Route::get('/', HomeComponent::class);
 Route::get('/cart', CartProduct::class);
-Route::get('/shop', ShopComponent::class);
+Route::get('/shop', ShopComponent::class)->name('shop');
 
 // Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
 //     return view('dashboard');

@@ -1,12 +1,10 @@
 <div class="mx-2 bg-white p-2">
     <h2 class="text-lg antialiased font-bold tracking-wide mt-4 mb-2 mx-2">
         Velzon Top Sellers
-        <a href="#" class="inline-block bg-grey-lighter font-normal text-sm text-blue-500">Shop now</a>
+        <a href="{{ route('shop') }}" class="inline-block bg-grey-lighter font-normal text-sm text-blue-500">Shop now</a>
     </h2>
 
     {{-- carousel 1 --}}
-
-    {{-- carousel 2 --}}
     <div x-data="{swiper: null}"
     x-init="swiper = new Swiper($refs.container, {
         loop: true,
