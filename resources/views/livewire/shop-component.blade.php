@@ -118,7 +118,30 @@
             </ul>
     </nav>
 
-    <article class="text-2xl bg-green-400 w-screen p-2">
-        <div class="text-2xl font-bold">Content...</div>
+    <article class="bg-gray-100 w-screen p-4">
+        <div class="text-3xl font-bold">Computers, Tablets and IT Accessories</div>
+        <span class="text-sm">
+            Shop laptops, desktops, monitors, tablets, PC gaming, hard drives and storage, accessories and more
+        </span>
+
+        {{-- products card --}}
+        <div class="h-64 grid grid-cols-3 gap-4 my-6">
+            <div class="p-2">
+                <a href="#" >
+                    <img class="mb-2" src="https://images.pexels.com/photos/585752/pexels-photo-585752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product images">
+                    <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, corrupti?</div>
+                </a>
+                <div class="text-sm">
+                    <div class=" text-gray-700">by John Doe</div>
+                    <div class="my-1">⭐⭐⭐⭐</div>
+                    <div class="my-2"> <span class="align-top">$</span><span class="text-lg font-semibold">62</span><span class="align-top">99</span></div>
+                    <div class="">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
+                </div>
+            </div>
+
+
+
+        </div>
+
     </article>
 </section>
