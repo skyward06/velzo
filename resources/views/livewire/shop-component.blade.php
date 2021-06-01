@@ -126,21 +126,21 @@
 
         {{-- products card --}}
         <div class="h-64 grid grid-cols-3 gap-4 my-6">
+            @foreach ($products as $product)
             <div class="p-2">
                 <a href="#" >
-                    <img class="mb-2" src="https://images.pexels.com/photos/585752/pexels-photo-585752.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940" alt="product images">
-                    <div class="">Lorem ipsum dolor sit amet consectetur adipisicing elit. Consequatur, corrupti?</div>
+                    <img class="mb-2" src="{{ asset('assets/images/products/') }}/{{ $product->image }}" alt="{{ $product->name }}">
+                    <div class="">{{ $product->name }}</div>
                 </a>
                 <div class="text-sm">
-                    <div class=" text-gray-700">by John Doe</div>
+                    <div class=" text-gray-700">John Doe</div>
                     <div class="my-1">⭐⭐⭐⭐</div>
-                    <div class="my-2"> <span class="align-top">$</span><span class="text-lg font-semibold">62</span><span class="align-top">99</span></div>
+                    <div class="my-2"> <span class="align-top">$</span><span class="text-lg font-semibold">{{ $product->regular_price }}</span><span class="align-top">99</span></div>
                     <div class="">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
                 </div>
             </div>
-
-
-
+            @endforeach
+            {{ $products->links() }}
         </div>
 
     </article>
