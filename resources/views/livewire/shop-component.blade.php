@@ -128,9 +128,11 @@
         <div class="h-64 grid grid-cols-3 gap-4 my-6">
             @foreach ($products as $product)
             <div class="p-2">
-                <a href="#" >
+                <a href="{{ route('product.details', ['slug'=>$product->slug]) }}" >
                     <img class="mb-2" src="{{ asset('assets/images/products/') }}/{{ $product->image }}" alt="{{ $product->name }}">
-                    <div class="">{{ $product->name }}</div>
+                    <a href="{{ route('product.details', ['slug'=>$product->slug]) }}">
+                        <div class="">{{ $product->name }}</div>
+                    </a>
                 </a>
                 <div class="text-sm">
                     <div class=" text-gray-700">John Doe</div>
