@@ -15,9 +15,10 @@
 
     {{-- Header --}}
 <div class="sticky top-0 flex items-center" style=" height:60px; z-index: 100; background-color: #131921;">
-    <img class="object-contain" style="width: 100px; margin: 0 20px; margin-top: 18px;"
-        src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="" class="header__logo">
-
+    <a href="/" class="">
+        <img class="object-contain" style="width: 100px; margin: 0 20px; margin-top: 18px;"
+            src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="" class="header__logo">
+    </a>
     <div class="flex items-center" style=" flex: 1; ">
         <input type="text" class="w-full border-none rounded-l-md" style="height: px; padding: 10px" >
         <x-heroicon-o-search class="rounded-r-md" style="padding: 5px; height: 45px !important; background-color:#cd9042; " />
@@ -66,7 +67,12 @@
 
         <div class="flex items-center" style="color: white">
             <x-heroicon-o-shopping-cart class="w-8 h-8" />
-            <a href="/cart" class="" style="font-size: 14px; font-weight: 800; margin-left: 10px; margin-right: 10px">0 Cart</a>
+            <a href="/cart" class="" style="font-size: 14px; font-weight: 800; margin-left: 10px; margin-right: 10px">
+                @if ( Cart::count() > 0 ) 0
+               <span> {{ Cart::count() }} </span>
+               @endif
+               <span>Cart</span>
+            </a>
         </div>
 
     </div>

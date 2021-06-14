@@ -23,5 +23,12 @@
         <div class="text-gray-600 text-sm">+ $29.12 Shipping & Import Fees Deposit to Indonesia Details </div>
         <div class="text-sm leading-10">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
         <div class="text-xl text-green-600 font-bold">{{ $product->stock_status }}</div>
+
+        <a href="#" class="block bg-yellow-300 p-2 border cursor-pointer border-black text-sm w-full mt-1 focus:outline-none"
+            wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}' ,{{ $product->regular_price}})">
+                Add to Cart
+        </a>
+        <a href="#" class="block bg-yellow-500 p-2 border border-black text-sm w-full mt-2 focus:outline-none">Buy Now</a>
     </div>
-</div>
+
+    </div>
