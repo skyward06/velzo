@@ -130,9 +130,7 @@
             <div class="p-2">
                 <a href="{{ route('product.details', ['slug'=>$product->slug]) }}" >
                     <img class="mb-2" src="{{ asset('assets/images/products/') }}/{{ $product->image }}" alt="{{ $product->name }}">
-                    <a href="{{ route('product.details', ['slug'=>$product->slug]) }}">
                         <div class="">{{ $product->name }}</div>
-                    </a>
                 </a>
                 <div class="text-sm">
                     <div class=" text-gray-700">John Doe</div>

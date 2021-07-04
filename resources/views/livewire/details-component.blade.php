@@ -1,3 +1,5 @@
+{{-- @dump($product) --}}
+
 <div class="p-11 inline-flex space-x-3 w-full">
     <div class="bg-green-400 w-2/6">
         <img src="{{ asset('assets/images/products/') }}/{{ $product->image }}" alt="" class="w-full h-80">
@@ -24,10 +26,12 @@
         <div class="text-sm leading-10">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
         <div class="text-xl text-green-600 font-bold">{{ $product->stock_status }}</div>
 
-        <a href="#" class="block bg-yellow-300 p-2 border cursor-pointer border-black text-sm w-full mt-1 focus:outline-none"
-            wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}' ,{{ $product->regular_price}})">
+        <form action="{{ route('cart.store')}}">
+        <div class="block bg-yellow-300 p-2 border cursor-pointer border-black text-sm w-full mt-1 focus:outline-none"
+            wire:click.prevent="store({{ $product->id }}, {{ $product->name }} ,{{ $product->regular_price}})">
                 Add to Cart
-        </a>
+        </div>
+    </form>
         <a href="#" class="block bg-yellow-500 p-2 border border-black text-sm w-full mt-2 focus:outline-none">Buy Now</a>
     </div>
 
