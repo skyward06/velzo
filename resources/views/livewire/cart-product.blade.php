@@ -26,9 +26,15 @@
                         <strong>{{ $item->model->regular_price}}</strong>
                     </p>
                     <div class="flex checkoutproduct__rating">
-                        <p>🌟🌟🌟🌟</p>
+                        <p class="text-green-500">In Stock</p>
                     </div>
-                    <button class="" style="background-color: #f0c14b; border: 1px solid; margin-top: 10px; border-color: #a88734 #9c7e31 #846a29; color: #111" >Remove from Basket</button>
+                    <div class="">
+                        <span class="">Qty: </span>
+                        <input class="w-10" type="text" name="product-quantity" value="{{ $item->qty }}" data-max="20" pattern="[0-9]*" >
+                        <a href="#" class="py-2 px-3 rounded-full bg-green-400" wire:click.prevent="increaseQty('{{ $item->rowId }}')">+</a>
+                        <a href="#" class="py-2 px-4 rounded-full bg-yellow-400" wire:click.prevent="decreaseQty('{{ $item->rowId }}')">-</a>
+                        <button class="" >Delete</button>
+                    </div>
                 </div>
             </div>
         </li>
