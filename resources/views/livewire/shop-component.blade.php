@@ -127,7 +127,7 @@
         {{-- products card --}}
         <div class="h-64 grid grid-cols-3 gap-4 my-6">
             @foreach ($products as $product)
-            <div class="p-2">
+            <div class="p-2 mb-5">
                 <a href="{{ route('product.details', ['slug'=>$product->slug]) }}" >
                     <img class="mb-2" src="{{ asset('assets/images/products/') }}/{{ $product->image }}" alt="{{ $product->name }}">
                         <div class="">{{ $product->name }}</div>
@@ -135,8 +135,10 @@
                 <div class="text-sm">
                     <div class=" text-gray-700">John Doe</div>
                     <div class="my-1">⭐⭐⭐⭐</div>
-                    <div class="my-2"> <span class="align-top">$</span><span class="text-lg font-semibold">{{ $product->regular_price }}</span><span class="align-top">99</span></div>
-                    <div class="">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
+                    <div class="my-2 text-yellow-700"> <span class="align-top">$</span><span class="text-lg font-semibold">{{ $product->regular_price }}</span><span class="align-top">99</span></div>
+                    <div class="mb-2">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
+                    <a href="#" class=" text-sm absolute py-1 px-2 border border-black bg-gray-200"
+                       wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to Cart</a>
                 </div>
             </div>
             @endforeach

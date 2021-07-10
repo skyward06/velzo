@@ -1,3 +1,4 @@
+{{-- @dump(Cart::content()) --}}
 <main id="main">
     <div class="text-2xl">Shopping Cart</div>
     <hr class=" ">
