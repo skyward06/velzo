@@ -21,6 +21,13 @@ class CartProduct extends Component
         Cart::update($rowId, $qty);
     }
 
+    public function destroy($rowId)
+    {
+        Cart::remove($rowId);
+        session()->flash('success_message', 'item has been removed');
+    }
+
+
     public function render()
     {
         return view('livewire.cart-product')->layout('layouts.base');

@@ -33,7 +33,7 @@
                         <input class="w-10" type="text" name="product-quantity" value="{{ $item->qty }}" data-max="20" pattern="[0-9]*" >
                         <a href="#" class="py-2 px-3 rounded-full bg-green-400" wire:click.prevent="increaseQty('{{ $item->rowId }}')">+</a>
                         <a href="#" class="py-2 px-4 rounded-full bg-yellow-400" wire:click.prevent="decreaseQty('{{ $item->rowId }}')">-</a>
-                        <button class="" >Delete</button>
+                        <a href="#" class="py-2 px-3 rounded-full bg-red-400" wire:click.prevent="destroy('{{ $item->rowId }}')">x</a>
                     </div>
                 </div>
             </div>
