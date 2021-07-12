@@ -123,6 +123,23 @@
         <span class="text-sm">
             Shop laptops, desktops, monitors, tablets, PC gaming, hard drives and storage, accessories and more
         </span>
+        <span class="">
+            <select name="filter" class="cursor-pointer" wire:model="sorting">
+                <option value="default" selected="selected">Default</option>
+                <option class="cursor-pointer" value="date">newness</option>
+                <option class="cursor-pointer" value="price">low to high</option>
+                <option class="cursor-pointer" value="price-desc">high to low</option>
+            </select>
+        </span>
+
+        <span class="">
+            <select name="post-per-page" class="cursor-pointer" wire:model="pagesize">
+                <option value="12" selected="selected">12 items</option>
+                <option class="cursor-pointer" value="18">18 items</option>
+                <option class="cursor-pointer" value="24">24 items</option>
+                <option class="cursor-pointer" value="32">32 items</option>
+            </select>
+        </span>
 
         {{-- products card --}}
         <div class="h-64 grid grid-cols-3 gap-4 my-6">
