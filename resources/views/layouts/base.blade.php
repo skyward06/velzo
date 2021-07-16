@@ -19,10 +19,8 @@
         <img class="object-contain" style="width: 100px; margin: 0 20px; margin-top: 18px;"
             src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="" class="header__logo">
     </a>
-    <div class="flex items-center" style=" flex: 1; ">
-        <input type="text" class="w-full border-none rounded-l-md" style="height: px; padding: 10px" >
-        <x-heroicon-o-search class="rounded-r-md" style="padding: 5px; height: 45px !important; background-color:#cd9042; " />
-    </div>
+
+    @livewire('header-search-component')
 
     <div class="flex justify-evenly">
         @if (Route::has('login'))
