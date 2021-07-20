@@ -16,6 +16,7 @@ Velzon is a Laravel [Amazon](https://amazon.com) clone project, that i build usi
 ## Additional Features
 - Pagination
 - Filter products by price and items
+- Related products & Popular products
 ## Installation
 Here is how you can run the project locally:
 1. Clone this repo
