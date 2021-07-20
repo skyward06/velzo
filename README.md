@@ -46,7 +46,7 @@ Here is how you can run the project locally:
     ```sh
     php artisan migrate
     ```
-1. Generate key 
+1. Seed
     ```sh
     php artisan db:seed
     ```
