@@ -41,7 +41,7 @@ Here is how you can run the project locally:
 1. Create database velzon
 1. Set your credentials
      DB_DATABASE=velzon, DB_USERNAME=yourDbUsername, DB_PASSWORD=yourDbPassword in your `.env` file
-1. Generate key 
+1. Migrate
     ```sh
     php artisan migrate
     ```
