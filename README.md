@@ -4,7 +4,7 @@
 
 ## About Velzon
 
-Velzon is a Laravel [Amazon](https://amazon.com) clone project, that i build using TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
+Velzon is a Laravel [Amazon](https://amazon.com) clone project using the TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
 
 > Note: Work in Progress.
 
