@@ -4,7 +4,7 @@
 
 ## About Velzon
 
-Velzon is a Laravel [Amazon](https://amazon.com) clone project using the TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
+Velzon is a Laravel [Amazon](https://amazon.com) clone project using th ane TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
 
 > Note: Work in Progress.
 
@@ -62,4 +62,4 @@ Here is how you can run the project locally:
 Pull requests are welcome.
 
 ## License
-Velzon is open-sourced software licensed under [the MIT license](https://choosealicense.com/licenses/mit/)
+Velzon is an open-sourced software licensed under [the MIT license](https://github.com/josuapsianturi/velzon/blob/main/LICENSE)
