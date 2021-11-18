@@ -13,11 +13,11 @@
 </head>
 <body class="p-0 m-0">
 
-    {{-- Header --}}
+{{-- Navbar --}}
 <div class="sticky top-0 flex items-center" style=" height:60px; z-index: 100; background-color: #131921;">
     <a href="/" class="">
         <img class="object-contain" style="width: 100px; margin: 0 20px; margin-top: 18px;"
-            src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="" class="header__logo">
+            src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon-logo" class="header__logo">
     </a>
 
     @livewire('header-search-component')
@@ -27,12 +27,12 @@
             @auth
                 @if (Auth::user()->utype === 'ADM')
                 <div class="flex flex-col mx-3 text-white">
-                    <span class="" style="font-size: 12px" >Hello, {{ Auth::user()->name }}</span>
-                    <a href="{{ route('admin.dashboard') }}" style="font-size: 12px" >Dashboard</a>
+                    <span class="text-sm">Hello, {{ Auth::user()->name }}</span>
+                    <a href="{{ route('admin.dashboard') }}" class="text-md" >Dashboard</a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
-                        class=""
-                        style="font-size: 14px; font-weight: 800;" >Logout</a>
+                        class="font-bold text-md">Logout</a>
+
                     <form action="{{ route('logout') }}" id="logout-form" method="POST">
                         @csrf
                     </form>
