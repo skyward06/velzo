@@ -19,6 +19,7 @@ class ShopComponent extends Component
         $this->sorting="default";
         $this->pagesize=12;
     }
+
     public function store($product_id, $product_name, $product_price)
     {
         Cart::add($product_id, $product_name, 1, $product_price)->associate('App\Models\Product');
@@ -42,6 +43,7 @@ class ShopComponent extends Component
         }
         $categories = Category::all();
         // dd($categories);
+        // dd($products->take(2));
         return view('livewire.shop-component', ['products' => $products, 'categories'=>$categories])->layout('layouts.base');
     }
 }

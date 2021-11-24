@@ -63,7 +63,7 @@
             <span class="" style="font-size: 14px; font-weight: 800;" >& Orders</span>
         </div>
 
-        <div class="flex items-center" style="color: white">
+        <a href="{{ ('cart') }}"  class="flex items-center" style="color: white">
             <x-heroicon-o-shopping-cart class="w-8 h-8" />
             <div class="" style="font-size: 14px; font-weight: 800; margin-left: 10px; margin-right: 10px">
                 @if ( Cart::count() > 0 )
@@ -71,7 +71,7 @@
                @endif
                <span>Cart</span>
             </div>
-        </div>
+        </a>
 
     </div>
 </div>
