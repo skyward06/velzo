@@ -1,14 +1,13 @@
 <?php
 
 use App\Http\Livewire\Admin\AdminDashboardComponent;
-use App\Http\Livewire\CartProduct;
+use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
 use App\Http\Livewire\DetailsComponent;
 use App\Http\Livewire\HomeComponent;
 use App\Http\Livewire\SearchComponent;
 use App\Http\Livewire\ShopComponent;
 use App\Http\Livewire\User\UserDashboardComponent;
-use App\Models\Category;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -23,7 +22,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeComponent::class);
-Route::get('/cart', CartProduct::class)->name('product.cart');
+Route::get('/cart', CartComponent::class)->name('product.cart');
 Route::get('/shop', ShopComponent::class)->name('shop');
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/product-category/{category_slug}', CategoryComponent::class )->name('product.category');
