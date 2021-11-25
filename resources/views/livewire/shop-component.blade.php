@@ -4,7 +4,7 @@
     <nav class="flex flex-col w-64 p-3 text-sm bg-gray-200">
         <div class="text-sm font-bold text-black" href="#">Department</div>
             <div class="p-2">
-                <span class="font-bold">Computers</span>
+                <span class="font-bold">All Category</span>
                 <ul class="p-2">
                     @foreach ($categories as $category)
                     <li class="">
@@ -162,6 +162,7 @@
                     <div class="my-1">⭐⭐⭐⭐</div>
                     <div class="my-2 text-yellow-700"> <span class="align-top">$</span><span class="text-lg font-semibold">{{ $product->regular_price }}</span><span class="align-top">99</span></div>
                     <div class="mb-2">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
+                    <div class="mb-2">Category: <span class="font-semibold">{{ $product->category->name }}</span> </div>
                     <a href="#" class="absolute px-2 py-1 text-sm bg-gray-200 border border-black "
                        wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to Cart</a>
                 </div>
