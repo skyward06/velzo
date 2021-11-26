@@ -47,8 +47,9 @@
                                 <td class="p-2 whitespace-nowrap">
                                     <div class="text-left">{{ $category->slug }}</div>
                                 </td>
-                                <td class="p-2 whitespace-nowrap">
+                                <td class="flex items-center p-2 justify-evenly whitespace-nowrap">
                                     <a href="{{ route('admin.editcategory', ['category_slug' => $category->slug]) }}" class="px-4 py-2 text-left text-white bg-blue-400 rounded">Edit</a>
+                                    <a wire:click.prevent="deleteCategory({{ $category->id }})" href="#" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</a>
                                 </td>
                             </tr>
                             @endforeach
