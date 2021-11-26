@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Livewire\Admin\AdminCategoryComponent;
 use App\Http\Livewire\Admin\AdminDashboardComponent;
 use App\Http\Livewire\CartComponent;
 use App\Http\Livewire\CategoryComponent;
@@ -26,7 +27,7 @@ Route::get('/cart', CartComponent::class)->name('product.cart');
 Route::get('/shop', ShopComponent::class)->name('shop');
 Route::get('/product/{slug}', DetailsComponent::class)->name('product.details');
 Route::get('/product-category/{category_slug}', CategoryComponent::class )->name('product.category');
-Route::get('/search',SearchComponent::class)->name('product.search');
+Route::get('/search', SearchComponent::class)->name('product.search');
 
 // User
 Route::middleware(['auth:sanctum', 'verified'])->group(function(){
@@ -36,4 +37,5 @@ Route::middleware(['auth:sanctum', 'verified'])->group(function(){
 // Admin
 Route::middleware('auth:sanctum', 'verified', 'authadmin')->group(function(){
     Route::get('/admin/dashboard', AdminDashboardComponent::class)->name('admin.dashboard');
+    Route::get('/admin/categories', AdminCategoryComponent::class)->name('admin.categories');
 });
