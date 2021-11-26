@@ -29,6 +29,7 @@
                 <div class="flex flex-col mx-3 text-white">
                     <span class="text-sm">Hello, {{ Auth::user()->name }}</span>
                     <a href="{{ route('admin.dashboard') }}" class="text-md" >Dashboard</a>
+                    <a href="{{ route('admin.categories') }}" class="text-md" >Categories</a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
                         class="font-bold text-md">Logout</a>
