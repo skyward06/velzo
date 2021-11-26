@@ -9,8 +9,14 @@
                 <a href="{{ route('admin.addcategory') }}" class="text-green-500 underline">Add New</a>
             </header>
             <div class="p-3">
+                @if (session()->has('message'))
+                <div class="px-4 py-2 my-3 text-green-700 bg-green-300">
+                    {{ session('message') }}
+                </div>
+                @endif
+
                 <div class="overflow-x-auto">
-                    <table class="w-full table-auto">
+                    <table class="w-full mb-4 table-auto">
                         <thead class="text-xs font-semibold text-gray-400 uppercase bg-gray-50">
                             <tr>
                                 <th class="p-2 whitespace-nowrap">
@@ -40,6 +46,9 @@
                                 </td>
                                 <td class="p-2 whitespace-nowrap">
                                     <div class="text-left">{{ $category->slug }}</div>
+                                </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <a href="{{ route('admin.editcategory', ['category_slug' => $category->slug]) }}" class="px-4 py-2 text-left text-white bg-blue-400 rounded">Edit</a>
                                 </td>
                             </tr>
                             @endforeach
