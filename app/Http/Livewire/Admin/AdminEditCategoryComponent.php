@@ -32,6 +32,8 @@ class AdminEditCategoryComponent extends Component
         $category = Category::find($this->category_id);
         $category->name = $this->name;
         $category->slug = $this->slug;
+        dd($category);
+
         $category->save();
 
         return redirect('/admin/categories')->with('message', 'Category successfully updated.');
