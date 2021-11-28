@@ -31,6 +31,7 @@
                     <a href="{{ route('admin.dashboard') }}" class="text-md" >Dashboard</a>
                     <a href="{{ route('admin.categories') }}" class="text-md" >Categories</a>
                     <a href="{{ route('admin.products') }}" class="text-md" >All Products</a>
+                    <a href="{{ route('admin.homeslider') }}" class="text-md" >Manage Home Slider</a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
                         class="font-bold text-md">Logout</a>
