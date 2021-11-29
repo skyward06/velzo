@@ -80,7 +80,7 @@
                                 </td>
                                 <td class="flex items-center p-2 justify-evenly whitespace-nowrap">
                                     <a href="{{ route('admin.edithomeslider', ['slider_id' => $slider->id]) }}" class="px-4 py-2 text-left text-white bg-blue-400 rounded">Edit</a>
-                                    {{-- <button wire:click.prevent="delet({{ $slider->id }})" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</button> --}}
+                                    <button wire:click.prevent="deleteSlide({{ $slider->id }})" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</button>
                                 </td>
                             </tr>
                             @endforeach
