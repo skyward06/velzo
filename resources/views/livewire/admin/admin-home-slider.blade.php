@@ -78,12 +78,10 @@
                                 <td class="p-2 whitespace-nowrap">
                                     <div class="text-left">{{ $slider->created_at }}</div>
                                 </td>
-
-
-                                {{-- <td class="flex items-center p-2 justify-evenly whitespace-nowrap">
+                                <td class="flex items-center p-2 justify-evenly whitespace-nowrap">
                                     <a href="{{ route('admin.edithomeslider', ['slider_id' => $slider->id]) }}" class="px-4 py-2 text-left text-white bg-blue-400 rounded">Edit</a>
-                                    <button wire:click.prevent="delet({{ $slider->id }})" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</button>
-                                </td> --}}
+                                    {{-- <button wire:click.prevent="delet({{ $slider->id }})" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</button> --}}
+                                </td>
                             </tr>
                             @endforeach
                         </tbody>
