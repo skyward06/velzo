@@ -1,4 +1,5 @@
 <main class="bg-gray-200">
+{{-- @dump($sliders) --}}
     {{-- Main Slide --}}
     <div class="">
         @include('layouts.partials.carousel')
