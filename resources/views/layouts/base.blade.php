@@ -6,11 +6,24 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Velzon</title>
     <link rel="stylesheet" href="{{ mix('css/app.css') }}">
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.css" />
-    <link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
     <script src="{{ mix('js/app.js') }}" defer></script>
+    <!-- flickty -->
+    <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
+    <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     @livewireStyles
 </head>
+<style>
+
+body { font-family: sans-serif; }
+
+.carousel-cell {
+  width: 66%;
+  height: 200px;
+  margin-right: 10px;
+  border-radius: 5px;
+}
+
+</style>
 <body class="p-0 m-0">
 
 {{-- Navbar --}}
