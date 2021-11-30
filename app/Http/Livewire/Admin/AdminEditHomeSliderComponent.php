@@ -40,7 +40,7 @@ class AdminEditHomeSliderComponent extends Component
         $slider->price = $this->price;
         $slider->link = $this->link;
         if ($this->newimage) {
-            $imagename = Carbon::now()->timestamp . '.' . $this->newimage->extension();
+            $imagename = Carbon::now()->timestamp;
             $this->newimage->storeAs('sliders', $imagename);
             $slider->image = $imagename;
         }
