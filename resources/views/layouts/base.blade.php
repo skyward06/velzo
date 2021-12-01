@@ -45,6 +45,7 @@ body { font-family: sans-serif; }
                     <a href="{{ route('admin.categories') }}" class="text-md" >Categories</a>
                     <a href="{{ route('admin.products') }}" class="text-md" >All Products</a>
                     <a href="{{ route('admin.homeslider') }}" class="text-md" >Manage Home Slider</a>
+                    <a href="{{ route('admin.homecategories') }}" class="text-md" >Manage Home Category</a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
                         class="font-bold text-md">Logout</a>
