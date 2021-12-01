@@ -1,6 +1,8 @@
 /node_modules
 /public/hot
 /public/storage
+/public/assets/images/livewire-tmp
+/public/assets/images/sliders
 /storage/*.key
 /vendor
 .env
