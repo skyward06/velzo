@@ -1,5 +1,4 @@
 <main class="bg-gray-200">
-{{-- @dump($sliders) --}}
     {{-- Main Slide --}}
     <div class="">
         @include('layouts.partials.carousel')
@@ -10,17 +9,15 @@
         @include('layouts.partials.card')
     </div>
 
-    {{-- Shop Card Carousel --}}
+    {{-- Velzon Latest Products --}}
     <div class="">
         @include('layouts.partials.shopCard')
     </div>
 
-    <div  class="w-full bg-gray-800 p-2 text-lg text-white text-center">Back to Top</div>
+    <div  class="w-full p-2 text-lg text-center text-white bg-gray-800">Back to Top</div>
 
     {{-- Footer --}}
     <div class="">
         @include('layouts.partials.footer')
     </div>
-
-
 </main>
