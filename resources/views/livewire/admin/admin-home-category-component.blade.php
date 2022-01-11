@@ -1,4 +1,4 @@
-
+{{-- @dump($categories) --}}
 <!-- component -->
 <div class="px-4 antialiased text-gray-600 bg-gray-100">
     <div class="flex justify-center h-full">
@@ -18,13 +18,13 @@
                     <div class="flex justify-evenly">
                     <label>Choose Categories: </label>
                         <div wire:ignore >
-                        <select wire:model="selected_categories" class="multiple_categories" name="categories[]" >
-                            {{-- @foreach ($categories as $category)
+                        <select wire:model="selected_categories" class="sel_categories form_control" name="categories[]" >
+                            @foreach ($categories as $category)
                                 <option value="{{ $category->id }}">{{ $category->name }}</option>
-                            @endforeach --}}
-                            <option value="Computer">Computer</option>
+                            @endforeach
+                            {{-- <option value="Computer">Computer</option>
                             <option value="Top Laptop">Top Laptop</option>
-                            <option value="rubik 4x4">rubik 4x4</option>
+                            <option value="rubik 4x4">rubik 4x4</option> --}}
                         </select>
                         </div>
                     </div>
