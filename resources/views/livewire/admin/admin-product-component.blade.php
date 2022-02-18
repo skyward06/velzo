@@ -1,4 +1,3 @@
-
 <!-- component -->
 <section class="px-4 antialiased text-gray-600 bg-gray-100">
     <div class="flex flex-col justify-center h-full">
@@ -35,6 +34,9 @@
                                     <div class="font-semibold text-center">Price</div>
                                 </th>
                                 <th class="p-2 whitespace-nowrap">
+                                    <div class="font-semibold text-center">Sale Price</div>
+                                </th>
+                                <th class="p-2 whitespace-nowrap">
                                     <div class="font-semibold text-center">Category</div>
                                 </th>
                                 <th class="p-2 whitespace-nowrap">
@@ -67,6 +69,10 @@
                                 <td class="p-2 whitespace-nowrap">
                                     <div class="text-left">{{ $product->regular_price }}</div>
                                 </td>
+                                <td class="p-2 whitespace-nowrap">
+                                    <div class="text-left">{{ $product->sale_price }}</div>
+                                </td>
+
                                 <td class="p-2 whitespace-nowrap">
                                     <div class="text-left">{{ $product->category->name }}</div>
                                 </td>

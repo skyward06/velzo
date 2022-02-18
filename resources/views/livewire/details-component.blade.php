@@ -14,7 +14,12 @@
         <hr class="bg-gray-300 h-0.5 my-2">
         <div class="my-2">
             <span class="align-top">Price: </span>
+            @if ($product->sale_price > 0)
+            <span class="text-lg font-semibold text-yellow-600">${{ $product->sale_price }}</span>
+            <del><span class="text-md italic font-semibold text-gray-600">${{ $product->regular_price }}</span></del>
+            @else
             <span class="text-lg font-semibold text-yellow-600">${{ $product->regular_price }}</span>
+            @endif
         </div>
 
         <hr class="bg-gray-300 h-0.5 my-2">
@@ -23,7 +28,11 @@
     </div>
 
     <div class="w-1/6 p-2 border border-gray-500 border-1">
+        @if ($product->sale_price > 0)
+        <div class="text-lg font-semibold text-yellow-600">${{ $product->sale_price }}</div>
+        @else
         <div class="text-lg font-semibold text-yellow-600">${{ $product->regular_price }}</div>
+        @endif
         <div class="text-sm text-gray-600">+ $29.12 Shipping & Import Fees Deposit to Indonesia Details </div>
         <div class="text-sm leading-10">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
         <div class="text-xl font-bold text-green-600">{{ $product->stock_status }}</div>
