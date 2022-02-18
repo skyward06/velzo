@@ -15,6 +15,7 @@
     {{-- <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script> --}}
     <!-- Select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css">
     @livewireStyles
 </head>
 <style>
@@ -77,6 +78,7 @@ body { font-family: sans-serif; }
                         <a href="{{ route('admin.products') }}" class="block px-4 py-1 hover:text-blue-400">All Products</a>
                         <a href="{{ route('admin.homeslider') }}" class="block px-4 py-1 hover:text-blue-400">Manage Home Slider</a>
                         <a href="{{ route('admin.homecategories') }}" class="block px-4 py-1 hover:text-blue-400">Manage Home Categories</a>
+                        <a href="{{ route('admin.sale') }}" class="block px-4 py-1 hover:text-blue-400">Sale Setting</a>
                         <a  href="{{ route('logout') }}" class="block px-4 py-1 hover:text-blue-400"  class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                         >
@@ -137,6 +139,8 @@ body { font-family: sans-serif; }
     <!-- Alpine -->
     <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.1/moment.min.js" integrity="sha512-qTXRIMyZIFb8iQcfjXWCO8+M5Tbc38Qi5WzdPOYZHIlZpzBHG3L3by84BBBOiRGiEb7KKtAOAs5qYdUiZiQNNQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
 
     @livewireScripts
 

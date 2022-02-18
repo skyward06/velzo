@@ -1,9 +1,11 @@
 {{-- @dump($sproducts); --}}
-@if ($sproducts->count() > 0)
-<div class="my-20 w-full p-2">
-    <div class="w-full p-2 text-left">
-        <div class="text-2xl">On Sale</div>
+@if ($sproducts->count() > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+<div class="w-full px-2 mt-10">
+    <div class="text-left bg-pink-600 p-2">
+        <div class="w-full text-2xl">On Sale</div>
+        <div class="text-md text-gray-500" data-expire="{{ Carbon\Carbon::parse($sale->sale_date)->format('Y/m/d h:m:s') }}"></div>
     </div>
+
     <div class="carousel" data-flickity='{"autoPlay": true, "groupCells": true }'>
         {{-- On Sale --}}
         @foreach ($sproducts as $sproduct)

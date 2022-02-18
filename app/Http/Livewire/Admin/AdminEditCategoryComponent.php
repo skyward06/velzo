@@ -32,7 +32,7 @@ class AdminEditCategoryComponent extends Component
         $category = Category::find($this->category_id);
         $category->name = $this->name;
         $category->slug = $this->slug;
-        dd($category);
+        // dd($category);
 
         $category->save();
 

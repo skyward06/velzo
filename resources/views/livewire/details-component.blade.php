@@ -14,7 +14,7 @@
         <hr class="bg-gray-300 h-0.5 my-2">
         <div class="my-2">
             <span class="align-top">Price: </span>
-            @if ($product->sale_price > 0)
+            @if ($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
             <span class="text-lg font-semibold text-yellow-600">${{ $product->sale_price }}</span>
             <del><span class="text-md italic font-semibold text-gray-600">${{ $product->regular_price }}</span></del>
             @else
@@ -28,7 +28,7 @@
     </div>
 
     <div class="w-1/6 p-2 border border-gray-500 border-1">
-        @if ($product->sale_price > 0)
+        @if ($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
         <div class="text-lg font-semibold text-yellow-600">${{ $product->sale_price }}</div>
         @else
         <div class="text-lg font-semibold text-yellow-600">${{ $product->regular_price }}</div>
@@ -39,9 +39,15 @@
 
         <form>
             <div class="">
-            <a href="#" class="block w-full p-2 mt-1 text-sm bg-yellow-300 border border-black cursor-pointer focus:outline-none" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">
-                    Add to Cart
+            @if ($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+            <a href="#" class="block w-full p-2 mt-1 text-sm bg-yellow-300 border border-black cursor-pointer focus:outline-none" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->sale_price }})">
+                Add to Cart
             </a>
+            @else
+            <a href="#" class="block w-full p-2 mt-1 text-sm bg-yellow-300 border border-black cursor-pointer focus:outline-none" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">
+                Add to Cart
+            </a>
+            @endif
         </div>
     </form>
         <a href="#" class="block w-full p-2 mt-2 text-sm bg-yellow-500 border border-black focus:outline-none">Buy Now</a>
