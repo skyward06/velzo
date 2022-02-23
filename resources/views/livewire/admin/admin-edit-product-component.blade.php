@@ -21,30 +21,37 @@
                         <div class="flex justify-around">
                             <label>Product Name</label>
                             <input type="text" placeholder="Product Name" wire:model="name" wire:keyup="generateSlug">
+                            {{-- @error("name") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Product Slug</label>
                             <input type="text" placeholder="Product Slug" wire:model="slug">
+                            {{-- @error("slug") <p class="text-red-500">error</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Short Description</label>
                             <textarea name="" id="" cols="20" rows="5" placeholder="Short Description" wire:model="short_description"></textarea>
+                            {{-- @error("short_description") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Description</label>
                             <textarea name="" id="" cols="20" rows="5" placeholder="description" wire:model="description"></textarea>
+                            {{-- @error("description") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Regular Price</label>
                             <input type="text" placeholder="regular price" wire:model="regular_price">
+                            {{-- @error("regular_price") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Sale Price</label>
                             <input type="text" placeholder="sale price" wire:model="sale_price">
+                            {{-- @error("sale_price") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>SKU</label>
                             <input type="text" placeholder="sku" wire:model="SKU">
+                            {{-- @error("SKU") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Stock</label>
@@ -52,6 +59,7 @@
                                 <option value="instock">Instock</option>
                                 <option value="outofstock">Out of Stock</option>
                             </select>
+                            {{-- @error("stock_status") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Featured</label>
@@ -63,6 +71,7 @@
                         <div class="flex justify-around">
                             <label>Quantity</label>
                             <input type="text" placeholder=" quantity" wire:model="quantity">
+                            {{-- @error("quantity") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Product Image</label>
@@ -80,6 +89,7 @@
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
                                     @endforeach
                             </select>
+                            {{-- @error("category_id") <p class="text-red-500">{{ $message }}</p> @enderror --}}
                         </div>
                     </div>
                     <div class="flex justify-center mt-10">
