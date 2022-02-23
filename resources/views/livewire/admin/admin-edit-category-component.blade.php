@@ -20,10 +20,16 @@
                         <div class="flex justify-around">
                             <label>Category Name</label>
                             <input type="text" placeholder="Category Name" wire:model="name" wire:keyup='generateslug'>
+                            {{-- @error("name")
+                                <p class="text-red-500">{{ $message }}</p>
+                            @enderror --}}
                         </div>
                         <div class="flex justify-around">
                             <label>Category Slug</label>
                             <input type="text" placeholder="Category Slug" wire:model="slug">
+                            {{-- @error("slug")
+                                <p class="text-red-500">{{ $message }}</p>
+                            @enderror --}}
                         </div>
                     </div>
                     <div class="flex justify-center mt-10">
