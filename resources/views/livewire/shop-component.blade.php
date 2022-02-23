@@ -30,12 +30,14 @@
                 </ul>
             </div>
 
-        <div class="text-sm font-bold text-black">Climate Pledge Friendly</div>
-            <ul class="p-2">
-                <li><input type="checkbox" class="rounded">Climate Pledge Friendly</li>
-            </ul>
+        <div class="text-sm font-bold text-black mb-4">
+            Price
+            <span class="font-semibold ml-2">${{ $minPrice }} -  ${{ $maxPrice }}</span>
+        </div>
 
-        <div class="text-sm font-bold text-black">Velzon Certified</div>
+        <div id="slider" wire:ignore></div>
+
+        <div class="text-sm font-bold text-black mt-10">Velzon Certified</div>
             <ul class="p-2">
                 <li><input type="checkbox" class="rounded">Auto Replenishment</li>
                 <li><input type="checkbox" class="rounded">Works with Alexa</li>
@@ -173,3 +175,27 @@
 
     </article>
 </section>
+
+@push('scripts')
+    <script>
+        var slider = document.getElementById('slider');
+        noUiSlider.create(slider,{
+            start: [1, 1000],
+            connect: true,
+            range: {
+                'min': 1,
+                'max': 1000
+            },
+            pips: {
+                mode: 'steps',
+                stepped: true,
+                density: 4
+            }
+        });
+
+        slider.noUiSlider.on('update', function(value) {
+            @this.set('minPrice', value[0]);
+            @this.set('maxPrice', value[1]);
+        });
+    </script>
+@endpush
