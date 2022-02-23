@@ -11,7 +11,7 @@
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
     <script src="https://unpkg.com/flickity@2/dist/flickity.pkgd.min.js"></script>
     <!-- Alpine Plugins -->
-     <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="//unpkg.com/alpinejs" defer></script>
     {{-- <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script> --}}
     <!-- Select2 -->
     <link href="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/css/select2.min.css" rel="stylesheet" />
@@ -52,9 +52,9 @@ body { font-family: sans-serif; }
                     {{-- <span class="text-sm">Hello, {{ Auth::user()->name }}</span> --}}
 
                 <!-- Dropdown 1 -->
-                <div x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block">
+                <div x-cloak x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block">
                     <!-- Dropdown Toggle Button -->
-                    <button @mouseover="open = true" class="flex items-center px-3 py-2 bg-white rounded-lg mx-2">
+                    <button @mouseover="open = true" class="flex items-center px-3 py-2 mx-2 bg-white rounded-lg">
                         <span class="mr-4">See All Actions</span>
                         <span
                             :class="open = ! open ? '' : '-rotate-180'"
@@ -81,7 +81,7 @@ body { font-family: sans-serif; }
                         <a href="{{ route('admin.homeslider') }}" class="block px-4 py-1 hover:text-blue-400">Manage Home Slider</a>
                         <a href="{{ route('admin.homecategories') }}" class="block px-4 py-1 hover:text-blue-400">Manage Home Categories</a>
                         <a href="{{ route('admin.sale') }}" class="block px-4 py-1 hover:text-blue-400">Sale Setting</a>
-                        <a  href="{{ route('logout') }}" class="block px-4 py-1 hover:text-blue-400"  class="block w-full px-4 py-2 text-left text-sm hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500"
+                        <a  href="{{ route('logout') }}" class="block px-4 py-1 hover:text-blue-400"  class="block w-full px-4 py-2 text-sm text-left hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
                         >
                             Log Out
