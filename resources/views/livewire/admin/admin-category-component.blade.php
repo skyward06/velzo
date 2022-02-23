@@ -49,7 +49,7 @@
                                 </td>
                                 <td class="flex items-center p-2 justify-evenly whitespace-nowrap">
                                     <a href="{{ route('admin.editcategory', ['category_slug' => $category->slug]) }}" class="px-4 py-2 text-left text-white bg-blue-400 rounded">Edit</a>
-                                    <a wire:click.prevent="deleteCategory({{ $category->id }})" href="#" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</a>
+                                    <a wire:click.prevent="deleteCategory({{ $category->id }})" onclick="confirm('Are you sure want to delete this category?') || event.stopImmediatePropagation()" href="#" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</a>
                                 </td>
                             </tr>
                             @endforeach

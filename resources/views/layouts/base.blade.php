@@ -52,7 +52,7 @@ body { font-family: sans-serif; }
                     {{-- <span class="text-sm">Hello, {{ Auth::user()->name }}</span> --}}
 
                 <!-- Dropdown 1 -->
-                <div x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block">
+                <div x-cloak x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block">
                     <!-- Dropdown Toggle Button -->
                     <button @mouseover="open = true" class="flex items-center px-3 py-2 bg-white rounded-lg mx-2">
                         <span class="mr-4">See All Actions</span>

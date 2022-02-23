@@ -82,7 +82,7 @@
 
                                 <td class="flex items-center p-2 justify-evenly whitespace-nowrap">
                                     <a href="{{ route('admin.editproduct', ['product_slug' => $product->slug]) }}" class="px-4 py-2 text-left text-white bg-blue-400 rounded">Edit</a>
-                                    <button wire:click.prevent="deleteProduct({{ $product->id }})" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</button>
+                                    <button wire:click.prevent="deleteProduct({{ $product->id }})" onclick="confirm('Are you sure want to delete this category?') || event.stopImmediatePropagation()" class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</button>
                                 </td>
                             </tr>
                             @endforeach
