@@ -101,3 +101,24 @@
         <!-- End Add New Products -->
     </div>
 </section>
+
+@push('scripts')
+    <script>
+        function simpleEditor(){
+            tinymce.init({
+                selector:'textarea#description',
+                width: 400,
+                height: 300,
+                setup:function(editor){
+                    editor.on('Change',function(e){
+                        tinyMCE.triggerSave();
+                        var sd_data = $('#description').val();
+                        @this.set('description', sd_data);
+                    });
+                }
+            });
+        };
+
+        simpleEditor();
+    </script>
+@endpush

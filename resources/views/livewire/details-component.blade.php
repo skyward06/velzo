@@ -24,7 +24,7 @@
 
         <hr class="bg-gray-300 h-0.5 my-2">
         <div class="text-xl font-bold">About this item</div>
-        <div class="">{{ $product->description }}</div>
+        <div class="">{!! $product->description !!}</div>
     </div>
 
     <div class="w-1/6 p-2 border border-gray-500 border-1">
