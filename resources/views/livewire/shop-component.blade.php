@@ -173,9 +173,9 @@
                        wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to Cart</a>
                        <div class="">
                            @if ($witems->contains($product->id))
-                           <x-heroicon-s-heart class="w-6 h-6 text-red-500 cursor-pointer" />
+                           <x-heroicon-s-heart class="w-6 h-6 text-red-500 cursor-pointer" wire:click.prevent="removeFromWishlist({{ $product->id }})" />
                            @else
-                           <x-heroicon-s-heart class="w-6 h-6 cursor-pointer" wire:click.prevent="addToWishlist({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})" />
+                           <x-heroicon-s-heart class="w-6 h-6 cursor-pointer hover:text-red-500" wire:click.prevent="addToWishlist({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})" />
                            @endif
                        </div>
                     </div>
