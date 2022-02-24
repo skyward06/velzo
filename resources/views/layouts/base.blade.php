@@ -120,11 +120,21 @@ body { font-family: sans-serif; }
             <span class="" style="font-size: 14px; font-weight: 800;" >& Orders</span>
         </div>
 
+        <a href="#" class="flex flex-col px-2 mx-3 text-white border rounded">
+            <span class="" style="font-size: 12px" >Wishlist
+                @if (Cart::instance('wishlist')->count() > 0)
+                    <span class="mx-1">({{ Cart::instance('wishlist')->count() }})</span>
+                @endif
+            </span>
+            <x-heroicon-s-heart class="w-6 h-6 text-red-500 cursor-pointer" />
+        </a>
+
+
         <a href="{{ ('cart') }}"  class="flex items-center" style="color: white">
             <x-heroicon-o-shopping-cart class="w-8 h-8" />
             <div class="" style="font-size: 14px; font-weight: 800; margin-left: 10px; margin-right: 10px">
-                @if ( Cart::count() > 0 )
-               <span> {{ Cart::count() }} </span>
+                @if ( Cart::instance('cart')->count() > 0 )
+               <span> {{ Cart::instance('cart')->count() }} </span>
                @endif
                <span>Cart</span>
             </div>

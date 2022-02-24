@@ -30,14 +30,14 @@
                 </ul>
             </div>
 
-        <div class="text-sm font-bold text-black mb-4">
+        <div class="mb-4 text-sm font-bold text-black">
             Price
-            <span class="font-semibold ml-2">${{ $minPrice }} -  ${{ $maxPrice }}</span>
+            <span class="ml-2 font-semibold">${{ $minPrice }} -  ${{ $maxPrice }}</span>
         </div>
 
         <div id="slider" wire:ignore></div>
 
-        <div class="text-sm font-bold text-black mt-10">Velzon Certified</div>
+        <div class="mt-10 text-sm font-bold text-black">Velzon Certified</div>
             <ul class="p-2">
                 <li><input type="checkbox" class="rounded">Auto Replenishment</li>
                 <li><input type="checkbox" class="rounded">Works with Alexa</li>
@@ -153,6 +153,9 @@
 
         {{-- products card --}}
         <div class="grid h-64 grid-cols-3 gap-4 my-6">
+            @php
+                $witems = Cart::instance('wishlist')->content()->pluck('id');
+            @endphp
             @foreach ($products as $product)
             <div class="p-2 mb-5">
                 <a href="{{ route('product.details', ['slug'=>$product->slug]) }}" >
@@ -165,8 +168,17 @@
                     <div class="my-2 text-yellow-700"> <span class="align-top">$</span><span class="text-lg font-semibold">{{ $product->regular_price }}</span><span class="align-top">99</span></div>
                     <div class="mb-2">Arrives: <span class="font-semibold">Sunday, January 01</span> </div>
                     <div class="mb-2">Category: <span class="font-semibold">{{ $product->category->name }}</span> </div>
-                    <a href="#" class="absolute px-2 py-1 text-sm bg-gray-200 border border-black "
+                    <div class="flex justify-between">
+                    <a href="#" class="px-2 py-1 text-sm bg-gray-200 border border-black "
                        wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})">Add to Cart</a>
+                       <div class="">
+                           @if ($witems->contains($product->id))
+                           <x-heroicon-s-heart class="w-6 h-6 text-red-500 cursor-pointer" />
+                           @else
+                           <x-heroicon-s-heart class="w-6 h-6 cursor-pointer" wire:click.prevent="addToWishlist({{ $product->id }}, '{{ $product->name }}', {{ $product->regular_price }})" />
+                           @endif
+                       </div>
+                    </div>
                 </div>
             </div>
             @endforeach

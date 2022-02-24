@@ -1,4 +1,4 @@
-{{-- @dump(Cart::content()->count()) --}}
+{{-- @dump(Cart::instance('cart')->content()->count()) --}}
 <main id="main" class="flex p-5 space-x-3 bg-gray-200">
 <div class="w-9/12 p-5 bg-white">
     <div class="mb-5 text-2xl">Shopping Cart</div>
@@ -11,9 +11,9 @@
             </div>
         @endif
 
-        @if (Cart::count() > 0)
+        @if (Cart::instance('cart')->count() > 0)
             <ul>
-                @foreach (Cart::content() as $item)
+                @foreach (Cart::instance('cart')->content() as $item)
                 <li>
                     <hr class="border-gray-300">
                     <div class="flex checkoutProduct" style=" margin-bottom: 20px" >
@@ -44,7 +44,7 @@
             <div class="">No Item in Cart</div>
         @endif
 
-        @if(Cart::content()->count() > 1)
+        @if(Cart::instance('cart')->content()->count() > 1)
             <button class="px-4 py-2 font-bold underline bg-red-600 rounded text-md" wire:click.prevent="destroyAll()">Delete All</button>
         @endif
     </div>
@@ -54,10 +54,10 @@
     <div class="text-xl">
         Subtotal (
         <span>
-        @if (Cart::count() > 0)
-            {{ Cart::count() }}
+        @if (Cart::instance('cart')->count() > 0)
+            {{ Cart::instance('cart')->count() }}
         @endif </span>  items):
-        <span class=""><b> $ {{ Cart::subtotal() }}</b></span>
+        <span class=""><b> $ {{ Cart::instance('cart')->subtotal() }}</b></span>
 
     </div>
     <div class="py-1 mt-6 text-sm text-center bg-yellow-400 border border-yellow-500 rounded-md">Proceed to checkout</div>
