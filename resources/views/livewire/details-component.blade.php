@@ -25,6 +25,7 @@
         <hr class="bg-gray-300 h-0.5 my-2">
         <div class="text-xl font-bold">About this item</div>
         <div class="">{!! $product->description !!}</div>
+
     </div>
 
     <div class="w-1/6 p-2 border border-gray-500 border-1">
@@ -38,8 +39,17 @@
         <div class="text-xl font-bold text-green-600">{{ $product->stock_status }}</div>
 
         <form>
+            <div class="mt-2">
+                <span>Qty:</span>
+                <input class="w-10 text-center text-gray-900 font-semibold rounded border-2 border-gray-700" type="text" name="product-quntity" value="1" data-max="120" pattern="[0-9]*" wire:model="qty" >
+                <button class="px-4 py-2 font-semibold" wire:click.prevent="decreaseQuantity">&#8722;</button>
+                <button class="px-4 py-2 font-semibold" wire:click.prevent="increaseQuantity">&#43;</button>
+            </div>
+
             <div class="">
-            @if ($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now())
+            <!-- Need to update date > now, si we can adad product to cart -->
+            {{-- @if ($product->sale_price > 0 && $sale->status == 1 && $sale->sale_date > Carbon\Carbon::now()) --}}
+            @if ($product->sale_price > 0 && $sale->status == 1)
             <a href="#" class="block w-full p-2 mt-1 text-sm bg-yellow-300 border border-black cursor-pointer focus:outline-none" wire:click.prevent="store({{ $product->id }}, '{{ $product->name }}', {{ $product->sale_price }})">
                 Add to Cart
             </a>

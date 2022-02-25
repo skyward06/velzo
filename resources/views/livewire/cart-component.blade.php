@@ -1,8 +1,9 @@
-{{-- @dump(Cart::instance('cart')->content()->count()) --}}
+{{-- @dump(Cart::instance('cart')->content()) --}}
 <main id="main" class="flex p-5 space-x-3 bg-gray-200">
 <div class="w-9/12 p-5 bg-white">
     <div class="mb-5 text-2xl">Shopping Cart</div>
 
+ {{-- @dump(Cart::instance('cart')->count()) --}}
     <div class="">
         @if (Session::has('success_message'))
             <div class="bg-green-400">
@@ -11,7 +12,7 @@
             </div>
         @endif
 
-        @if (Cart::instance('cart')->count() > 0)
+        @if (Cart::instance('cart')->count() >= 0)
             <ul>
                 @foreach (Cart::instance('cart')->content() as $item)
                 <li>
