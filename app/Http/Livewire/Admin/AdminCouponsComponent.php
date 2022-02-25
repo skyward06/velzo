@@ -13,4 +13,9 @@ class AdminCouponsComponent extends Component
         return view('livewire.admin.admin-coupons-component', ['coupons' => $coupons])->layout('layouts.base');
     }
 
+    public function deleteCoupon(Coupon $coupon_id)
+    {
+        $coupon_id->delete();
+        return redirect('/admin/coupons')->with('message', 'Coupon successfully deleted.');
+    }
 }
