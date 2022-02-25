@@ -22,7 +22,7 @@
                     <div class="mb-2">Category: <span class="font-semibold">{{ $item->model->category->name }}</span> </div>
                     <div class="flex justify-between">
                     <a href="#" class="px-2 py-1 text-sm bg-gray-200 border border-black "
-                       wire:click.prevent="store({{ $item->model->id }}, '{{ $item->model->name }}', {{ $item->model->regular_price }})">Add to Cart</a>
+                       wire:click.prevent="moveProductFromWishlistToCart('{{ $item->rowId }}')">Move to Cart</a>
                        <div class="">
                            <x-heroicon-s-heart class="w-6 h-6 text-red-500 cursor-pointer" wire:click.prevent="removeFromWishlist({{ $item->model->id }})" />
                        </div>
