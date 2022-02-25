@@ -28,7 +28,7 @@
                                 <p class="text-green-500">In Stock</p>
                             </div>
                             <div class="mt-4">
-                                <a href="#" class="px-3 py-2 bg-blue-400 rounded" wire:click.prevent="switchToSaveForLater('{{ $item->rowId }}')">Move To Cart</a>
+                                <button class="px-3 py-2 bg-blue-400 rounded" wire:click.prevent="moveToCart('{{ $item->rowId }}')">Move To Cart</button>
                             </div>
                             <div class="">
                             </div>

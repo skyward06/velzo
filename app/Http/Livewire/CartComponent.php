@@ -46,6 +46,15 @@ class CartComponent extends Component
         session()->flash('success_message', 'item has been saved for later');
     }
 
+    public function moveToCart($rowId)
+    {
+        $item = Cart::instance('saveForLater')->get($rowId);
+        Cart::instance('saveForLater')->remove($rowId);
+        Cart::instance('cart')->add($item->id, $item->name, 1, $item->price)->associate('App\Models\Product');
+        $this->emitTo('cart-count-component', 'refreshComponent');
+        session()->flash('success_message', 'item has been moved to cart');
+    }
+
     public function render()
     {
         return view('livewire.cart-component')->layout('layouts.base');
