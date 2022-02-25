@@ -29,8 +29,7 @@
                             </div>
                             <div class="mt-4">
                                 <button class="px-3 py-2 bg-blue-400 rounded" wire:click.prevent="moveToCart('{{ $item->rowId }}')">Move To Cart</button>
-                            </div>
-                            <div class="">
+                                <button class="px-3 py-2 bg-red-400 rounded-full" wire:click.prevent="deleteFromSaveForLater('{{ $item->rowId }}')">x</button>
                             </div>
                         </div>
                     </div>
@@ -39,10 +38,6 @@
             </ul>
         @else
             <div class="">No Item Saved For Later</div>
-        @endif
-
-        @if(Cart::instance('saveForLater')->content()->count() > 1)
-            <button class="px-4 py-2 font-bold underline bg-red-600 rounded text-md" wire:click.prevent="destroyAll()">Delete All</button>
         @endif
     </div>
 </div>
