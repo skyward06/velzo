@@ -1,4 +1,4 @@
-<a href="#" class="flex flex-col px-2 mx-3 text-white border rounded">
+<a href="{{ route('product.wishlist') }}" class="flex flex-col px-2 mx-3 text-white border rounded">
     <span class="" style="font-size: 12px" >Wishlist
         @if (Cart::instance('wishlist')->count() > 0)
             <span class="mx-1">({{ Cart::instance('wishlist')->count() }})</span>
