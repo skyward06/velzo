@@ -28,7 +28,7 @@
                                 <p class="text-green-500">In Stock</p>
                             </div>
                             <div class="mt-4">
-                                <button class="px-3 py-2 bg-blue-400 rounded" wire:click.prevent="moveToCart('{{ $item->rowId }}')">Move To Cart</button>
+                                <button class="px-3 py-2 text-sm bg-blue-400 rounded" wire:click.prevent="moveToCart('{{ $item->rowId }}')">Move To Cart</button>
                                 <button class="px-3 py-2 bg-red-400 rounded-full" wire:click.prevent="deleteFromSaveForLater('{{ $item->rowId }}')">x</button>
                             </div>
                         </div>

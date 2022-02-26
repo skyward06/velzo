@@ -2,11 +2,19 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Coupon;
 use Livewire\Component;
 use Cart;
 
 class CartComponent extends Component
 {
+    public $haveCouponCode;
+    public $couponCode;
+    public $discount;
+    public $subtotalAfterDiscount;
+    public $taxAfterDiscount;
+    public $totalAfterDiscount;
+
     public function increaseQty($rowId)
     {
         $product = Cart::instance('cart')->get($rowId);
@@ -61,8 +69,34 @@ class CartComponent extends Component
         session()->flash('success_message', 'item has been removed from save for later');
     }
 
+    public function applyCouponCode()
+    {
+        // dd('applyCouponCode');
+        $coupon = Coupon::where('code', $this->couponCode)->where('cart_value', '<=', Cart::instance('cart')->subtotal())->first();
+        if (!$coupon) {
+            session()->flash('coupon_message', 'Coupon code is not valid');
+            return;
+        }
+
+        session()->put('coupon', [
+            'code' => $coupon->code,
+            'type' => $coupon->type,
+            'value' => $coupon->value,
+            'cart_value' => $coupon->cart_value,
+        ]);
+    }
+
     public function render()
     {
+        if (session()->has('coupon')) {
+            // dd(Cart::instance('cart')->subtotal());
+            if(Cart::instance('cart')->subtotal() < session()->get('coupon')['cart_value']) {
+                session()->forget('coupon');
+            }
+            else {
+                $this->calculateDiscounts();
+            }
+        }
         return view('livewire.cart-component')->layout('layouts.base');
     }
 }
