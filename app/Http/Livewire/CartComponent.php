@@ -5,6 +5,7 @@ namespace App\Http\Livewire;
 use App\Models\Coupon;
 use Livewire\Component;
 use Cart;
+use Illuminate\Support\Facades\Auth;
 
 class CartComponent extends Component
 {
@@ -107,6 +108,20 @@ class CartComponent extends Component
         // remove coupon from session
         session()->forget('coupon');
     }
+
+    public function checkout()
+    {
+        // dd('checkout');
+        // redirect to checkout page
+        if (Auth::check()) {
+            return redirect()->route('checkout');
+        }
+        else
+        {
+            return redirect()->route('login');
+        }
+    }
+
 
     public function render()
     {
