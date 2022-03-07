@@ -72,6 +72,16 @@ class CheckoutComponent extends Component
         $order->status = 'ordered';
         $order->save();
 
+        foreach (Cart::instance('cart')->content() as $item)
+        {
+            $orderItem = new OrderItem();
+            $orderItem->order_id = $order->id;
+            $orderItem->product_id = $item->id;
+            $orderItem->price = $item->price;
+            $orderItem->quantity = $item->qty;
+            $orderItem->save();
+        }
+
         $this->thankyou = true;
         Cart::instance('cart')->destroy();
         session()->forget('checkout');
