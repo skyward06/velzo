@@ -82,6 +82,15 @@ class CheckoutComponent extends Component
             $orderItem->save();
         }
 
+        if ($this->paymentmode == 'cod') {
+            $transaction = new Transaction();
+            $transaction->user_id = Auth::user()->id;
+            $transaction->order_id = $order->id;
+            $transaction->mode = 'cod';
+            $transaction->status = 'pending';
+            $transaction->save();
+        }
+
         $this->thankyou = true;
         Cart::instance('cart')->destroy();
         session()->forget('checkout');

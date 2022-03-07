@@ -52,7 +52,7 @@ class CartComponent extends Component
         Cart::instance('cart')->remove($rowId);
         Cart::instance('saveForLater')->add($item->id, $item->name, 1, $item->price)->associate('App\Models\Product');
         $this->emitTo('cart-count-component', 'refreshComponent');
-        session()->flash('success_message', 'item has been saved for later');
+        session()->flash('saved_success_message', 'item has been saved for later');
     }
 
     public function moveToCart($rowId)
@@ -124,6 +124,11 @@ class CartComponent extends Component
 
     public function setAmountForCheckout()
     {
+        if (!Cart::instance('cart')->count() > 0) {
+            session()->forget('checkout');
+            return;
+        }
+
         if (session()->has('coupon')) {
             session()->put('checkout', [
                 'discount' => $this->discount,
