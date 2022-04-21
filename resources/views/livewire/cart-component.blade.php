@@ -129,6 +129,6 @@
         @endif
     </div>
     @endif
-    <button wire:click.prevent="checkout" class="py-1 mt-6 text-sm text-center bg-yellow-400 border border-yellow-500 rounded-md">Proceed to checkout</button>
+    <button wire:click.prevent="checkout" class="py-2 px-4 mt-6 text-sm text-center bg-yellow-400 border border-yellow-500 rounded-md">Proceed to checkout</button>
 </div>
 </main>

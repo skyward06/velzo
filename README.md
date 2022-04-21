@@ -1,5 +1,8 @@
 <h1 align="center" style="color:orange" >Velzon</h1>
-<p align="center"><a href="https://packagist.org/packages/cpriego/valet-linux"><img src="https://poser.pugx.org/cpriego/valet-linux/license.svg" alt="License"></a>
+<p align="center">
+    <a href="https://packagist.org/packages/cpriego/valet-linux">
+        <img src="https://poser.pugx.org/cpriego/valet-linux/license.svg" alt="License">
+    </a>
 </p>
 
 ## About Velzon
@@ -8,15 +11,35 @@ Velzon is a Laravel [Amazon](https://amazon.com) clone project using th ane TALL
 
 > Note: Work in Progress.
 
-## View
-![velzon-home](public/assets/images/preview/velzon-home.png)
-![velzon-shop](public/assets/images/preview/velzon-shop.png)
-![velzon-shop](public/assets/images/preview/velzon-checkout.png)
+## Screenshots
+
+![home-page](public/assets/images/screenshots/home-page.png)
+
+See the full home page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/home-page-full.png)
+
+![shop-page](public/assets/images/screenshots/shop-page.png)
+
+See the full shop page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/shop-page-full.png)
+
+![checkout-page](public/assets/images/screenshots/checkout-page.png)
+
+See the full checkout page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/checkout-page-full.png)
+
+![cart-page](public/assets/images/screenshots/cart-page.png)
+
+See the full cart page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/cart-page-full.png)
+
+![admin-all-products-page](public/assets/images/screenshots/admin-all-products-page.png)
+
+see the full admin all products page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/admin-all-products-page-full.png)
+
+![stripe-payment-page](public/assets/images/screenshots/stripe-payment-page.png)
 
 ## Additional Features
 - Pagination
 - Filter products by price and items
 - Related products & Popular products
+
 ## Installation
 Here is how you can run the project locally:
 1. Clone this repo

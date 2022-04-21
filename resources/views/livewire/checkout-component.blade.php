@@ -1,6 +1,6 @@
 <!-- component -->
 <section class="px-4 antialiased text-gray-600">
-    <div class="flex flex-col justify-center h-full">
+    <div class="flex flex-col justify-center h-full py-6">
         <!--- Checkout -->
         <header class="">
             <h1 class="text-3xl font-bold text-center text-green-600">Checkout</h1>
@@ -56,7 +56,7 @@
 
                 <div class="my-3 border border-gray-500"></div>
                 <!-- Payment Method -->
-                <div class="space-y-5">
+                <div class="space-y-5 p-4">
                     <h4 class="text-xl text-center">Payment Method</h4>
                     <div class="">
                         <div class="">
