@@ -82,9 +82,9 @@ body { font-family: sans-serif; }
                         <a href="{{ route('admin.homecategories') }}" class="block px-4 py-1 hover:text-blue-400">Manage Home Categories</a>
                         <a href="{{ route('admin.sale') }}" class="block px-4 py-1 hover:text-blue-400">Sale Setting</a>
                         <a href="{{ route('admin.coupons') }}" class="block px-4 py-1 hover:text-blue-400">All Coupon</a>
+                        <a href="{{ route('admin.orders') }}" class="block px-4 py-1 hover:text-blue-400">Orders</a>
                         <a  href="{{ route('logout') }}" class="block px-4 py-1 hover:text-blue-400"  class="block w-full px-4 py-2 text-sm text-left hover:bg-gray-100 focus:outline-none focus:ring focus:ring-aqua-400 disabled:text-gray-500"
-                        onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
-                        >
+                            onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
                             Log Out
                         </a>
                         <form action="{{ route('logout') }}" id="logout-form" method="POST">
