@@ -40,6 +40,16 @@ see the full admin all products page [here](https://raw.githubusercontent.com/jo
 - Filter products by price and items
 - Related products & Popular products
 
+    Admin actions:
+- Admin dashboard
+- Categories
+- All products
+- Manage home slider
+- Manage home categories
+- Sale setting
+- All coupons
+- Orders
+
 ## Requirements
 -   Node v14.19.1
 -   npm 6.14.16
