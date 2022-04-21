@@ -5,7 +5,7 @@
     </a>
 </p>
 
-## About Velzon
+## About
 
 Velzon is a Laravel [Amazon](https://amazon.com) clone project using th ane TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
 
@@ -39,6 +39,13 @@ see the full admin all products page [here](https://raw.githubusercontent.com/jo
 - Pagination
 - Filter products by price and items
 - Related products & Popular products
+
+## Requirements
+-   Node v14.19.1
+-   npm 6.14.16
+-   composer 2.2.6
+-   php 8.0.17
+-   mysql 8.0.27
 
 ## Installation
 Here is how you can run the project locally:

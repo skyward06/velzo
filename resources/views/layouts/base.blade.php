@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Velzon</title>
-    <link rel="stylesheet" href="{{ mix('css/app.css') }}">
+    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
     <script src="{{ mix('js/app.js') }}" defer></script>
     <!-- flickty -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">
@@ -37,9 +37,8 @@ body { font-family: sans-serif; }
 
 {{-- Navbar --}}
 <div class="sticky top-0 flex items-center" style=" height:60px; z-index: 100; background-color: #131921;">
-    <a href="/" class="">
-        <img class="object-contain" style="width: 100px; margin: 0 20px; margin-top: 18px;"
-            src="http://pngimg.com/uploads/amazon/amazon_PNG11.png" alt="amazon-logo" class="header__logo">
+    <a href="/" class="text-3xl font-semibold mx-3">
+        <h1 style="color: #cd9042">Velzon</h1>
     </a>
 
     @livewire('header-search-component')
