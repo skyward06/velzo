@@ -58,36 +58,61 @@
                 <!-- Payment Method -->
                 <div class="space-y-5">
                     <h4 class="text-xl text-center">Payment Method</h4>
-                    {{-- <div class=""><span class="">Check / Money order</span></div>
-                    <div class=""><span class="">Credit Cart (saved)</span></div> --}}
                     <div class="">
-                        <label class="payment-method">
-                            <input name="payment-method" id="payment-method-bank" value="cod" type="radio" class="" wire:model="paymentmode">
+                        <div class="">
+                            <input name="cod" id="cod" value="cod" type="radio" class="" wire:model="paymentmode">
                             <span class="font-semibold">Cash On Delivery</span>
                             <div class="">Order now pay on delivery</div>
-                        </label>
-                        <label class="">
-                            <input name="payment-method" id="payment-method-visa" value="card" type="radio" wire:model="paymentmode">
+                        </div>
+                        <div class="">
+                            <input name="card" id="card" value="card" type="radio" wire:model="paymentmode">
                             <span class="font-semibold">Debit / Credit Card</span>
                             <div class="">There are many variations of passages of Lorem Ipsum available</div>
-                        </label>
-                        <label class="payment-method">
-                            <input name="payment-method" id="payment-method-paypal" value="paypal" type="radio" wire:model="paymentmode">
-                            <span class="font-semibold">Paypal</span>
-                            <div class="">You can pay with your credit</div>
-                            <div class="">card if you don't have a paypal account</div>
-                        </label>
-                    </div>
-                    @if (Session::has('checkout'))
-                    <div class="">
-                        <div class="flex justify-around font-bold"><span>Grand Total</span> <span class="">${{ Session::get('checkout')['total'] }}</span></div>
-                    </div>
-                    @endif
-                    <div class="flex justify-center">
-                        <button type="submit" class="px-4 py-2 bg-yellow-500 rounded shadow">Place order now</button>
+
+                            {{-- debit card --}}
+                            <div x-data="{open: false}" x-cloak class="max-w-md">
+                                <button @click="open = ! open" class="py-2 px-4 rounded bg-gray-700 text-white font-semibold text-md">Open / close card</button>
+                                @if (Session::has('stripe_error'))
+                                    <div class="text-red-500">{{ Session::get('stripe_error') }}</div>
+                                @endif
+                                <div x-show="open" class="space-y-2 flex justify-between">
+                                    <div class="">
+                                        <label for="card-no">Card Number: </label>
+                                        <input type="text" name="card-no" value="" placeholder="Card Number" wire:model="card_no">
+                                        @error('card_no') <span class="my-2 text-red-500">{{ $message }}</span> @enderror
+                                    </div>
+                                    <div class="">
+                                        <label for="exp-month">Expiry Month: </label>
+                                        <input type="text" name="exp-month" value="" placeholder="MM" wire:model="exp_month">
+                                        @error('exp_month') <span class="my-2 text-red-500">{{ $message }}</span> @enderror
+                                    </div>
+                                    <div class="">
+                                        <label for="exp-year">Expiry Year: </label>
+                                        <input type="text" name="exp-year" value="" placeholder="YYYY" wire:model="exp_year">
+                                        @error('exp_year') <span class="my-2 text-red-500">{{ $message }}</span> @enderror
+                                    </div>
+                                    <div class="">
+                                        <label for="cvc">CVC: </label>
+                                        <input type="password" name="cvc" value="" placeholder="CVC" wire:model="cvc">
+                                        @error('cvc') <span class="my-2 text-red-500">{{ $message }}</span> @enderror
+                                    </div>
+                                </div>
+                            </div>
+                            {{-- end debit card --}}
+                        </div>
                     </div>
                 </div>
                 <!-- End Payment Method -->
+
+                <!-- list -->
+                @if (Session::has('checkout'))
+                <div class="">
+                    <div class="flex justify-around font-bold"><span>Grand Total</span> <span class="">${{ Session::get('checkout')['total'] }}</span></div>
+                </div>
+                @endif
+                <div class="flex justify-center">
+                    <button type="submit" class="px-4 py-2 bg-yellow-500 rounded shadow">Place order now</button>
+                </div>
             </form>
         </div>
         <!-- End Checkout -->

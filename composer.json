@@ -7,6 +7,7 @@
     "require": {
         "php": "^7.3|^8.0",
         "blade-ui-kit/blade-heroicons": "^1.1",
+        "cartalyst/stripe-laravel": "^14.0",
         "fruitcake/laravel-cors": "^2.0",
         "guzzlehttp/guzzle": "^7.0.1",
         "hardevine/shoppingcart": "^3.0",
@@ -15,15 +16,16 @@
         "laravel/sanctum": "^2.6",
         "laravel/tinker": "^2.5",
         "livewire/livewire": "^2.10.5",
-        "cartalyst/stripe-laravel": "^14.0"
+        "stripe/stripe-php": "^7.124"
     },
     "require-dev": {
-        "spatie/laravel-ignition": "^1.0",
+        "barryvdh/laravel-debugbar": "^3.6",
         "fakerphp/faker": "^1.9.1",
         "laravel/sail": "^1.0.1",
         "mockery/mockery": "^1.4.2",
         "nunomaduro/collision": "^6.1",
-        "phpunit/phpunit": "^9.3.3"
+        "phpunit/phpunit": "^9.3.3",
+        "spatie/laravel-ignition": "^1.0"
     },
     "autoload": {
         "psr-4": {
