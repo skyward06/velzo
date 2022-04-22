@@ -5,13 +5,11 @@
     </a>
 </p>
 
-See velzon management project [here](https://josuapsianturi.notion.site/99485e04f4e64d9eb6535c4a4e633d38?v=c6a0008ec2fe459d8f2ffd64b1869a47)
-
 ## About
 
 Velzon is a Laravel [Amazon](https://amazon.com) clone project using the TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
 
-> Note: Work in Progress. You can see velzon management project 
+> Note: Work in Progress.
 
 ## Screenshots
 
@@ -54,6 +52,9 @@ see the full admin all products page [here](https://raw.githubusercontent.com/jo
 -   composer 2.2.6
 -   php 8.0.17
 -   mysql 8.0.27
+
+## Tools
+- [Notion](https://josuapsianturi.notion.site/99485e04f4e64d9eb6535c4a4e633d38?v=c6a0008ec2fe459d8f2ffd64b1869a47) 
 
 ## Installation
 Here is how you can run the project locally:
