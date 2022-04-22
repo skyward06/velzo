@@ -5,11 +5,13 @@
     </a>
 </p>
 
+See velzon management project [here](https://josuapsianturi.notion.site/99485e04f4e64d9eb6535c4a4e633d38?v=c6a0008ec2fe459d8f2ffd64b1869a47)
+
 ## About
 
-Velzon is a Laravel [Amazon](https://amazon.com) clone project using th ane TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
+Velzon is a Laravel [Amazon](https://amazon.com) clone project using the TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
 
-> Note: Work in Progress.
+> Note: Work in Progress. You can see velzon management project 
 
 ## Screenshots
 
