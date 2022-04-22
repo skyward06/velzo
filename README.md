@@ -1,4 +1,4 @@
-<h1 align="center" style="color:orange" >Velzon</h1>
+<b><h1 align="center" style="color: #cd9042" >Velzon</h1></b>
 <p align="center">
     <a href="https://packagist.org/packages/cpriego/valet-linux">
         <img src="https://poser.pugx.org/cpriego/valet-linux/license.svg" alt="License">
@@ -14,23 +14,18 @@ Velzon is a Laravel [Amazon](https://amazon.com) clone project using th ane TALL
 ## Screenshots
 
 ![home-page](public/assets/images/screenshots/home-page.png)
-
 See the full home page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/home-page-full.png)
 
 ![shop-page](public/assets/images/screenshots/shop-page.png)
-
 See the full shop page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/shop-page-full.png)
 
 ![checkout-page](public/assets/images/screenshots/checkout-page.png)
-
 See the full checkout page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/checkout-page-full.png)
 
 ![cart-page](public/assets/images/screenshots/cart-page.png)
-
 See the full cart page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/cart-page-full.png)
 
 ![admin-all-products-page](public/assets/images/screenshots/admin-all-products-page.png)
-
 see the full admin all products page [here](https://raw.githubusercontent.com/josuapsianturi/velzon/main/public/assets/images/screenshots/admin-all-products-page-full.png)
 
 ![stripe-payment-page](public/assets/images/screenshots/stripe-payment-page.png)
@@ -39,8 +34,9 @@ see the full admin all products page [here](https://raw.githubusercontent.com/jo
 - Pagination
 - Filter products by price and items
 - Related products & Popular products
+- Price filter Slider
 
-    Admin actions:
+    Admin actions (crud):
 - Admin dashboard
 - Categories
 - All products
@@ -71,6 +67,10 @@ Here is how you can run the project locally:
     ```sh
     composer install
     ```
+1. install front-end dependencies
+    ```sh
+    npm install && npm run dev
+    ```
 1. Copy .env.example file to .env 
     ```sh
     cp .env.example .env
@@ -79,9 +79,17 @@ Here is how you can run the project locally:
     ```sh
     php artisan key:generate
     ```
-1. Create database velzon
-1. Set your credentials
-     DB_DATABASE=velzon, DB_USERNAME=yourDbUsername, DB_PASSWORD=yourDbPassword in your `.env` file
+1. Create account and get `STRIPE_SECRET` and `STRIPE_KEY` [ here](https://dashboard.stripe.com/test/dashboard). Make sure to copy `Secret key` and `Publishable key`.
+![stripe-secret-and-key](public/assets/images/installation/stripe-secret-and-key.png)
+> Note:
+> - STRIPE_KEY=Publishable key
+> - STRIPE_SECRET=Secret key
+
+1. Create database velzon  (you can change `database_name`)
+1. Go to `.env` file 
+    - set database credentials (`DB_DATABASE=velzon`, `DB_USERNAME=root`, `DB_PASSWORD=`)
+    - paste `STRIPE_KEY=(your Publishable key)` and `STRIPE_SECRET=(your Secret key)`
+    > Make sure to follow your `DB_USERNAME` and `DB_PASSWORD`
 1. Migrate
     ```sh
     php artisan migrate
@@ -90,6 +98,7 @@ Here is how you can run the project locally:
     ```sh
     php artisan db:seed
     ```
+    > This command will create Fake Categories(6) and Products(22)
 1. Run server 
     ```sh
     php artisan serve
@@ -97,6 +106,8 @@ Here is how you can run the project locally:
 1. Visit `localhost:8000` in your favorite browser.     
 
     > Make sure to follow your Laravel local Development Environment.
+
+<h2 align="center"> ~_~ DO WHAT EXCITES ~_~</h2>
 
 ## Contributing
 Pull requests are welcome.
