@@ -1,4 +1,4 @@
-<h1 align="center" style="color: orange; font-weight: bold;" >Velzon</h1>
+<h1 align="center" style="color: orange" style="font-weight: bold;" >Velzon</h1>
 <p align="center">
     <a href="https://packagist.org/packages/cpriego/valet-linux">
         <img src="https://poser.pugx.org/cpriego/valet-linux/license.svg" alt="License">
@@ -83,7 +83,9 @@ Here is how you can run the project locally:
     php artisan key:generate
     ```
 1. Create account and get `STRIPE_SECRET` and `STRIPE_KEY` [ here](https://dashboard.stripe.com/test/dashboard). Make sure to copy `Secret key` and `Publishable key`.
+
 ![stripe-secret-and-key](public/assets/images/installation/stripe-secret-and-key.png)
+
 > Note:
 > - STRIPE_KEY=Publishable key
 > - STRIPE_SECRET=Secret key
@@ -110,7 +112,7 @@ Here is how you can run the project locally:
 
     > Make sure to follow your Laravel local Development Environment.
 
-<h2 align="center"> ~_~ DO WHAT EXCITES ~_~</h2>
+<h2 align="center" style="color: orange"> ~_~ HAVE FUN ~_~</h2>
 
 ## Contributing
 Pull requests are welcome.
