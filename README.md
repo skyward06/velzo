@@ -1,4 +1,4 @@
-<b><h1 align="center" style="color: orange" >Velzon</h1></b>
+<h1 align="center" style="color: orange; font-weight: bold;" >Velzon</h1>
 <p align="center">
     <a href="https://packagist.org/packages/cpriego/valet-linux">
         <img src="https://poser.pugx.org/cpriego/valet-linux/license.svg" alt="License">
