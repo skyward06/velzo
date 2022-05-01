@@ -4,9 +4,9 @@
         @include('layouts.partials.carousel')
     </div>
 
-    <div class="">
+    {{-- <div class="">
         @include('layouts.partials.on-sale')
-    </div>
+    </div> --}}
 
     {{-- Main Card --}}
     <div class="">
