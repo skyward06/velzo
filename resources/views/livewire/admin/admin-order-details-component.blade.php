@@ -4,6 +4,9 @@
         <h1>
             Ordered Items
         </h1>
+        <div class="flex">
+            <a href="{{ route('admin.orders') }}" class="px-4 py-2 bg-green-400 rounded">All Orders</a>
+        </div>
 
         <div class="flex flex-col divide-y divide-gray-100">
             <h1 class="text-lg">Products Name</h1>
