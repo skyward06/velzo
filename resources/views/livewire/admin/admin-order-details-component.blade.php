@@ -30,12 +30,116 @@
         <h1>
             Billing Details
         </h1>
+
+        <div class="overflow-x-auto">
+            <table class="w-full mb-4 table-auto">
+                <thead class="text-xs font-semibold text-gray-400 uppercase bg-gray-50">
+                    <tr>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Firstname</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Lastname</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Mobile</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Email</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Line 1</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Line 2</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">City</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Province</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Zip Code</div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="text-sm divide-y divide-gray-100">
+                    <tr>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->firstname }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->lastname }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->mobile }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->email }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->line1 }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->line2 }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->city }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->province }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->zipcode }}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
     <div>
         <h1>
             Transaction
         </h1>
+
+                <div class="overflow-x-auto">
+            <table class="w-full mb-4 table-auto">
+                <thead class="text-xs font-semibold text-gray-400 uppercase bg-gray-50">
+                    <tr>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Mode</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Status</div>
+                        </th>
+                        <th class="p-2 whitespace-nowrap">
+                            <div class="font-semibold text-center">Created At</div>
+                        </th>
+                    </tr>
+                </thead>
+
+                <tbody class="text-sm divide-y divide-gray-100">
+                    <tr>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->transaction->mode }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->transaction->status }}</div>
+                        </td>
+                        <td class="p-2 whitespace-nowrap">
+                            <div class="text-center">{{ $order->transaction->created_at }}</div>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
     </div>
 
 </div>
