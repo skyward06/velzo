@@ -8,6 +8,7 @@
 Velzon is a Laravel [Amazon](https://amazon.com) clone project using the TALL stack ([Tailwindcss](https://tailwindcss.com/), [Alpinejs](https://github.com/alpinejs/alpine/), [Laravel](https://laravel.com/), [Livewire](https://laravel-livewire.com/) ).
 
 * [Screenshots](#screenshots)
+* [Features](#features)
 * [Additional Features](#additionalFeatures)
 * [Requirements](#requirements)
 * [Installation](#installation)
@@ -37,15 +38,30 @@ see the full admin all products page [here](https://raw.githubusercontent.com/jo
 
 ![stripe-payment-page](public/assets/images/screenshots/stripe-payment-page.png)
 
+<a name="features"></a>
+## Features
+
+> These features are there on the Amazon website
+
+- Authentication
+- Show home, shop products, details product, cart, wishlist and checkout page
+- Home page ( card go to the shop page, home sliders)
+- Shop page ( Filter Products by categories and price option, products card)
+- Details product page ( image, title, description, price, add to cart)
+- Cart page ( show, delete, increase, decrease product, move product from cart to saved for later and vice versa, auto calculate subtotal )
+- Wishlist page ( products cards, move to cart)
+- Checkout page ( Billing address, payment method with Credit or debit cards and cash on delivery, order)
+
 <a name="additionalFeatures"></a>
 ## Additional Features
 
 - Pagination
-- Filter products by price and items
+- Filter products by range price slider and items
 - Related products & Popular products
 - Price filter Slider
+- Home page ( latest product carousel )
 
-    Admin actions (crud):
+Admin actions (crud):
 - Admin dashboard
 - Categories
 - All products
@@ -118,14 +134,12 @@ Here is how you can run the project locally:
     ```  
 13. Visit `localhost:8000` in your favorite browser.     
 
-    > Make sure to follow your Laravel local Development Environment.
+    > Make sure to follow your Laravel local Development Environment and operating system.
 
 <a name="tools"></a>
 ## Tools
 
 - [Notion](https://josuapsianturi.notion.site/99485e04f4e64d9eb6535c4a4e633d38?v=c6a0008ec2fe459d8f2ffd64b1869a47) 
-
-<h2 align="center" style="color: orange"> ~ HAVE FUN ~</h2>
 
 <a name="contributing"></a>
 ## Contributing
@@ -136,3 +150,5 @@ Pull requests are welcome.
 ## License
 
 Velzon is an open-sourced software licensed under [the MIT license](https://github.com/josuapsianturi/velzon/blob/main/LICENSE)
+
+<h2 align="center" style="color: orange"> ~ HAVE FUN ~</h2>
