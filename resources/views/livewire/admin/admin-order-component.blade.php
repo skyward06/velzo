@@ -102,8 +102,7 @@
                                     <div class="text-left">{{ $order->created_at }}</div>
                                 </td>
                                 <td class="flex items-center p-2 justify-evenly whitespace-nowrap">
-                                    <a href="#" class="px-4 py-2 text-left text-white bg-blue-400 rounded">Edit</a>
-                                    <button class="px-4 py-2 text-left text-white bg-red-400 rounded">Delete</button>
+                                    <a href="{{ route('admin.orderdetails', ['order_id' => $order->id]) }}" class="px-4 py-2 text-left text-white bg-blue-400 rounded mr-2">Details</a>
                                 </td>
                             </tr>
                             @endforeach
