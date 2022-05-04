@@ -115,10 +115,25 @@ body { font-family: sans-serif; }
                 @endif
         @endif
 
-        <div class="flex flex-col mx-3 text-white">
-            <span class="" style="font-size: 12px" >Returns</span>
-            <span class="" style="font-size: 14px; font-weight: 800;" >& Orders</span>
+        <!-- User Dropdown -->
+        <div x-cloak x-data="{ open: false }" @mouseleave="open = false" class="flex flex-col mx-3 text-white">
+            <button  @mouseover="open = true" class="flex flex-col">
+                <span class="" style="font-size: 12px" >Returns</span>
+                <span class="" style="font-size: 14px; font-weight: 800;" >& Orders</span>
+            </button>
+
+            <div x-show="open"
+                    x-transition:enter="transition ease-out duration-300"
+                    x-transition:enter-start="opacity-0 transform scale-90"
+                    x-transition:enter-end="opacity-100 transform scale-100"
+                    x-transition:leave="transition ease-in duration-300"
+                    x-transition:leave-start="opacity-100 transform scale-100"
+                    x-transition:leave-end="opacity-0 transform scale-90"
+                    class="absolute right-4 text-gray-500 bg-white rounded-lg shadow-xl w-96 mt-10">
+                <a href="{{ route('user.orders') }}" class="block px-4 py-1 hover:text-blue-400">My Orders</a>
+            </div>
         </div>
+        <!-- End User Dropdown -->
 
         <!-- Wishlist -->
         @livewire('wishlist-count-component')
