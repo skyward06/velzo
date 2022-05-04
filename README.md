@@ -74,11 +74,13 @@ Admin actions (crud):
 <a name="requirements"></a>
 ## Requirements
 
--   Node v14.19.1+
--   npm 6.14.16+
--   composer 2.2.6+
--   php 8.0.17+
--   mysql 8.0.27+
+Package | Version
+--- | ---
+[Node](https://nodejs.org/en/) | V 14.19.1+
+[Npm](https://nodejs.org/en/)  | V 6.14.16+ 
+[Composer](https://getcomposer.org/)  | V 2.2.6+
+[Php](https://www.php.net/)  | V 8.0.17+
+[Mysql](https://www.mysql.com/)  | V 8.0.27+
 
 <a name="installation"></a>
 ## Installation
@@ -150,5 +152,7 @@ Pull requests are welcome.
 ## License
 
 Velzon is an open-sourced software licensed under [the MIT license](https://github.com/josuapsianturi/velzon/blob/main/LICENSE)
+
+## 
 
 <h2 align="center" style="color: orange"> ~ HAVE FUN ~</h2>
