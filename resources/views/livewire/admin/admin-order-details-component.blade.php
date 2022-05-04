@@ -1,12 +1,51 @@
 {{-- @dump($order->orderItems); --}}
 <div class="p-3">
+    <div class="">
+        <h1>
+            Order Details
+        </h1>
+
+        <div class="flex">
+            <a href="{{ route('admin.orders') }}" class="px-4 py-2 bg-green-400 rounded">All Orders</a>
+        </div>
+    </div>
+
+    <div class="my-3">
+        <table class="table-auto">
+            <thead>
+                <tr>
+                    <th class="p-2 whitespace-nowrap">Order Id</th>
+                    <th class="p-2 whitespace-nowrap">Created At</th>
+                    <th class="p-2 whitespace-nowrap">Status</th>
+                @if($order->status == 'delivered')
+                    <th>Delivery Date</th>
+                @elseif( $order->status == 'canceled')
+                    <th>Cancellation Date</th>
+                @endif
+
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ $order->id }}</td>
+                    <td>{{ $order->created_at }}</td>
+                    <td>{{ $order->status }}</td>
+                @if($order->status == 'delivered')
+                    <td>{{ $order->delivered_date }}</td>
+                @elseif( $order->status == 'canceled')
+                    <td>{{ $order->canceled_date }}</td>
+                @endif
+                </tr>
+            </tbody>
+        </table>
+    </div>
     <div class="flex flex-col">
         <h1>
             Ordered Items
         </h1>
-        <div class="flex">
+        {{-- <div class="flex">
             <a href="{{ route('admin.orders') }}" class="px-4 py-2 bg-green-400 rounded">All Orders</a>
-        </div>
+        </div> --}}
 
         <div class="flex flex-col divide-y divide-gray-100">
             <h1 class="text-lg">Products Name</h1>
