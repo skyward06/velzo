@@ -1,12 +1,52 @@
 {{-- @dump($order->orderItems); --}}
 <div class="p-3">
+    @if (session()->has('order_message'))
+    <div class="px-4 py-2 my-3 text-green-700 bg-green-300" role="alert"">
+        {{ session('order_message') }}
+    </div>
+    @endif
+
+    <div class="">
+        <div class="text-lg">Order Details</div>
+    </div>
+
+    <div class="flex">
+        <a href="{{ route('user.orders') }}" class="px-4 py-2 bg-green-400 rounded mr-3">My Orders</a>
+        @if ($order->status == 'ordered')
+        <a href="#" wire:click.prevent="cancelOrder" class="px-4 py-2 bg-red-400 rounded">Cancel Order</a>
+        @endif
+    </div>
+
+    <div class="my-3">
+        <table class="table-auto">
+            <thead>
+                <tr>
+                    <th class="p-2 whitespace-nowrap">Order Id</th>
+                    <th class="p-2 whitespace-nowrap">Order Date</th>
+                    <th class="p-2 whitespace-nowrap">Status</th>
+                @if($order->status == 'delivered')
+                    <th>Delivery Date</th>
+                @elseif( $order->status == 'canceled')
+                    <th>Cancellation Date</th>
+                @endif
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>{{ $order->id }}</td>
+                    <td>{{ $order->created_at }}</td>
+                    <td class="">{{ $order->status }}</td>
+                @if($order->status == 'delivered')
+                    <td>{{ $order->delivered_date }}</td>
+                @elseif( $order->status == 'canceled')
+                    <td>{{ $order->canceled_date }}</td>
+                @endif
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
     <div class="flex flex-col">
-        <h1>
-            Ordered Items
-        </h1>
-        <div class="flex">
-            <a href="{{ route('user.orders') }}" class="px-4 py-2 bg-green-400 rounded">My Orders</a>
-        </div>
 
         <div class="flex flex-col divide-y divide-gray-100">
             <h1 class="text-lg">Products Name</h1>
@@ -105,12 +145,13 @@
 
     </div>
 
+    @if ($order->status == 'delivered')
     <div>
         <h1>
             Transaction
         </h1>
 
-                <div class="overflow-x-auto">
+        <div class="overflow-x-auto">
             <table class="w-full mb-4 table-auto">
                 <thead class="text-xs font-semibold text-gray-400 uppercase bg-gray-50">
                     <tr>
@@ -130,6 +171,7 @@
                     <tr>
                         </td>
                         <td class="p-2 whitespace-nowrap">
+                            {{-- @dump($order->transaction->mode) --}}
                             <div class="text-center">{{ $order->transaction->mode }}</div>
                         </td>
                         <td class="p-2 whitespace-nowrap">
@@ -142,8 +184,8 @@
                 </tbody>
             </table>
         </div>
-
     </div>
+    @endif
 
 </div>
 
