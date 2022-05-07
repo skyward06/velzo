@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Velzon</title>
-    <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="{{ mix('css/app.css') }}" rel="stylesheet">
+     {{-- <link href="/resources/css/output.css" rel="stylesheet"> --}}
     <script src="{{ mix('js/app.js') }}" defer></script>
     <!-- flickty -->
     <link rel="stylesheet" href="https://unpkg.com/flickity@2/dist/flickity.min.css">

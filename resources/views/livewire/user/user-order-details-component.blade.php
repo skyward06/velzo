@@ -54,10 +54,13 @@
             <div class="flex items-center justify-around">
                 <img src="{{ asset('assets/images/products') }}/{{ $orderItem->product->image }}" alt="{{ $orderItem->product->name }}" class="object-contain checkoutproduct__image" style="width: 100px; height: 100px;" />
                 <div class="font-medium text-gray-800">{{ $orderItem->product->name }}</div>
-                        <div class="font-medium text-gray-800">{{ $orderItem->price }}</div>
+                <div class="font-medium text-gray-800">{{ $orderItem->price }}</div>
                 <div class="font-medium text-gray-800">x</div>
                 <div class="font-medium text-gray-800">{{ $orderItem->quantity }}</div>
                 <div class="font-medium text-gray-800">$ {{ $orderItem->price * $orderItem->quantity }}</div>
+                @if ($order->status == 'delivered' )
+                <a href="{{ route('user.review', ['order_item_id' => $orderItem->id]) }}" class="px-2 py-1 rounded-full bg-blue-400 text-sm">Write Review</a>
+                @endif
             </div>
 
             <h1 class="text-lg">Order Summary</h1>
