@@ -5,6 +5,7 @@ module.exports = {
         "./resources/**/*.blade.php",
         "./resources/**/*.js",
         "./resources/**/*.vue",
+        "./src/**/*.{html,js}",
     ],
 
     theme: {
@@ -17,7 +18,7 @@ module.exports = {
 
     variants: {
         extend: {
-            opacity: ['disabled'],
+            // opacity: ['disabled'],
         },
     },
 
