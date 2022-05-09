@@ -1,16 +1,36 @@
 {{-- @dump($popular_product) --}}
 {{-- @dump($related_products) --}}
 {{-- @dump($product->name) --}}
+{{-- @dump( $product->orderItems ) --}}
 
 <div class="inline-flex w-full space-x-3 p-11">
-    <div class="w-2/6 bg-green-400">
+    <div class="w-2/6">
         <img src="{{ asset('assets/images/products/') }}/{{ $product->image }}" alt="" class="w-full h-80">
     </div>
 
     <div class="w-3/6 px-2 text-sm">
         <div class="text-2xl font-bold">{{ $product->name }}</div>
         <div class="leading-9 text-green -600">Visit the store</div>
-        <div class="my-1">⭐⭐⭐⭐</div>
+        <div class="my-1 flex">
+            @php
+                $avgrating = 0;
+            @endphp
+            @foreach ($product->orderItems->where('rstatus', 1) as $orderItem)
+                @php
+                    $avgrating = $avgrating + $orderItem->review->rating;
+                @endphp
+            @endforeach
+            @for($i = 1; $i <= 5; $i++)
+                @if ($i <= $avgrating)
+                <span class="">⭐</span>
+                @else
+                <div class="">
+                    <x-bi-star class=""/>
+                </div>
+                @endif
+            @endfor
+            <a href="" class="">( {{ $product->orderItems->where('rstatus', 1)->count() }} review)</a>
+        </div>
         <hr class="bg-gray-300 h-0.5 my-2">
         <div class="my-2">
             <span class="align-top">Price: </span>
@@ -63,7 +83,48 @@
         <a href="#" class="block w-full p-2 mt-2 text-sm bg-yellow-500 border border-black focus:outline-none">Buy Now</a>
     </div>
 
+</div>
+
+<!-- Review -->
+<div class="p-2 mx-2 bg-white">
+    <h2 class="mx-2 mt-4 mb-2 text-lg antialiased font-bold tracking-wide">
+        Review
+    </h2>
+@if ($product->orderItems->where('rstatus', 1)->count() > 0)
+    @foreach ($product->orderItems->where('rstatus', 1) as $orderItem)
+    <div class="">
+        <div class="mt-6 flex justify-start items-center flex-row space-x-2.5">
+            <div>
+                <img src="https://avatars.githubusercontent.com/u/54291811?v=4" alt="user-avatar" class="w-12 rounded-full" />
+            </div>
+            <div class="flex flex-col justify-start items-start space-y-2">
+                <p class="text-base font-medium">{{ $orderItem->order->user->name }}</p>
+                <p class="text-sm">{{ Carbon\Carbon::parse($orderItem->review->created_at)->format('d F Y')  }}</p>
+            </div>
+        </div>
+
+        <div class="w-full flex py-2 space-x-4">
+            <div class="text-xl md:text-2xl font-medium leading-normal mr-4">{{ $orderItem->review->comment }}</div>
+            <div class="flex items-center">
+                @for($i = 1; $i <= 5; $i++)
+                    @if ($i <= $orderItem->review->rating)
+                    <span class="">⭐</span>
+                    @else
+                    <div class="text-base">
+                        <x-bi-star class=""/>
+                    </div>
+                    @endif
+                @endfor
+            </div>
+        </div>
     </div>
+    @endforeach
+@else
+    <div class="text-center">
+        <p class="text-base font-medium">No Review</p>
+    </div>
+@endif
+</div>
 
     {{-- popular products --}}
     <div class="p-2 mx-2 bg-white">
@@ -142,7 +203,7 @@
         </div>
     </div>
 
-    {{-- popular products --}}
+    {{-- Related products --}}
     <div class="p-2 mx-2 bg-white">
         <h2 class="mx-2 mt-4 mb-2 text-lg antialiased font-bold tracking-wide">
             Related Products

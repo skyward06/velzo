@@ -10,4 +10,9 @@ class Review extends Model
     use HasFactory;
 
     protected $guarded = [];
+
+    public function orderItem()
+    {
+        return $this->belongsTo(OrderItem::class);
+    }
 }
