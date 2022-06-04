@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Velzon</title>
+    <title>{{ $page_title ?? 'Velzon.com Spend less. Smile more.' }}</title>
     <link href="{{ mix('css/app.css') }}" rel="stylesheet">
      {{-- <link href="/resources/css/output.css" rel="stylesheet"> --}}
     <script src="{{ mix('js/app.js') }}" defer></script>
@@ -35,7 +35,6 @@ body { font-family: sans-serif; }
 [x-cloak] { display: none !important; }
 </style>
 <body class="p-0 m-0">
-
 {{-- Navbar --}}
 <div class="sticky top-0 flex items-center" style=" height:60px; z-index: 100; background-color: #131921;">
     <a href="/" class="text-3xl font-semibold mx-3">
