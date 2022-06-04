@@ -46,7 +46,7 @@ body { font-family: sans-serif; }
 
     <div class="flex justify-evenly">
         @auth
-            @if (Auth::user()->utype === 'ADM')
+            @if (auth()->user()->utype === 'ADM')
                 <!-- Dropdown 1 -->
                 <div x-cloak x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block">
                     <button @mouseover="open = true" class="flex items-center px-3 py-2 mx-2 bg-white rounded-lg">
@@ -90,7 +90,7 @@ body { font-family: sans-serif; }
                 <!-- End Dropdown 1 -->
             @else
                 <div class="flex flex-col mx-3 text-white">
-                    <span class="" style="font-size: 12px" >Hello, {{ Auth::user()->name }}</span>
+                    <span class="" style="font-size: 12px" >Hello, {{ auth()->user()->name }}</span>
                     <a href="{{ route('user.dashboard') }}" style="font-size: 12px" >Dashboard</a>
                     <a href="{{ route('logout') }}"
                         onclick="event.preventDefault(); document.getElementById('logout-form').submit(); "
