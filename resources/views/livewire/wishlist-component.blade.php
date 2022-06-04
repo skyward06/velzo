@@ -6,9 +6,8 @@
         </div>
 
         {{-- Wishlist Product card --}}
-        @if(Cart::instance('wishlist')->content()->count() > 0)
         <div class="grid h-64 grid-cols-3 gap-4 my-6">
-            @foreach (Cart::instance('wishlist')->content() as $item)
+            @forelse (Cart::instance('wishlist')->content() as $item)
             <div class="p-2 mb-5">
                 <a href="{{ route('product.details', ['slug'=>$item->model->slug]) }}" >
                     <img class="mb-2" src="{{ asset('assets/images/products/') }}/{{ $item->model->image }}" alt="{{ $item->model->name }}">
@@ -29,13 +28,11 @@
                     </div>
                 </div>
             </div>
-            @endforeach
-            {{-- {{ $item->links() }} --}}
+            @empty
+                <div class="text-right">
+                    <div class="text-gray-700">No items in wishlist</div>
+                </div>
+            @endforelse
         </div>
-        @else
-        <div class="text-center">
-            <h1 class="text-gray-700 text-3xl">No items in wishlist</h1>
-        </div>
-        @endif
     </nav>
 </section>
