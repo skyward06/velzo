@@ -45,15 +45,10 @@ body { font-family: sans-serif; }
     @livewire('header-search-component')
 
     <div class="flex justify-evenly">
-        @if (Route::has('login'))
-            @auth
-                @if (Auth::user()->utype === 'ADM')
-                {{-- <div class="flex flex-col mx-3 text-white"> --}}
-                    {{-- <span class="text-sm">Hello, {{ Auth::user()->name }}</span> --}}
-
+        @auth
+            @if (Auth::user()->utype === 'ADM')
                 <!-- Dropdown 1 -->
                 <div x-cloak x-data="{ open: false }" @mouseleave="open = false" class="relative inline-block">
-                    <!-- Dropdown Toggle Button -->
                     <button @mouseover="open = true" class="flex items-center px-3 py-2 mx-2 bg-white rounded-lg">
                         <span class="mr-4">See All Actions</span>
                         <span
@@ -64,7 +59,6 @@ body { font-family: sans-serif; }
                             </svg>
                         </span>
                     </button>
-                    <!-- End Dropdown Toggle Button -->
 
                     <!-- Dropdown Menu -->
                     <div x-show="open"
@@ -94,8 +88,7 @@ body { font-family: sans-serif; }
                     <!-- End Dropdown Menu -->
                 </div>
                 <!-- End Dropdown 1 -->
-
-                @else
+            @else
                 <div class="flex flex-col mx-3 text-white">
                     <span class="" style="font-size: 12px" >Hello, {{ Auth::user()->name }}</span>
                     <a href="{{ route('user.dashboard') }}" style="font-size: 12px" >Dashboard</a>
@@ -107,15 +100,15 @@ body { font-family: sans-serif; }
                         @csrf
                     </form>
                 </div>
-                @endif
-                @else
-                <div class="mx-3 text-white">
-                    <span  class="mx-3 cursor-pointer" style="font-size: 14px; font-weight: 800;" > <a href="{{ route('login') }}">Sign In</a> </span>
-                    <span href="{{ route('logout') }}" class="mx-3 cursor-pointer" style="font-size: 14px; font-weight: 800" > <a href="{{ route('register') }}"> Sign Up</a></span>
-                </div>
-                @endif
-        @endif
+            @endif
+        @endauth
 
+        @guest
+            <div class="mx-3 text-white">
+                <span  class="mx-3 cursor-pointer" style="font-size: 14px; font-weight: 800;" > <a href="{{ route('login') }}">Sign In</a> </span>
+                <span href="{{ route('logout') }}" class="mx-3 cursor-pointer" style="font-size: 14px; font-weight: 800" > <a href="{{ route('register') }}"> Sign Up</a></span>
+            </div>
+        @endguest
         <!-- User Dropdown -->
         <div x-cloak x-data="{ open: false }" @mouseleave="open = false" class="flex flex-col mx-3 text-white">
             <button  @mouseover="open = true" class="flex flex-col">
