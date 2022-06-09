@@ -47,7 +47,16 @@
     <!-- Page Content -->
     {{ $slot }}
 
-    @stack('modals')
+    <script src="https://unpkg.com/swiper/swiper-bundle.js"></script>
+    <script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script></body>
+    <script src="https://cdn.jsdelivr.net/npm/select2@4.1.0-rc.0/dist/js/select2.min.js"></script>
+    <!-- Alpine -->
+    <script defer src="https://unpkg.com/@alpinejs/persist@3.x.x/dist/cdn.min.js"></script>
+    <script defer src="https://unpkg.com/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/noUiSlider/15.5.1/nouislider.min.js" integrity="sha512-T5Bneq9hePRO8JR0S/0lQ7gdW+ceLThvC80UjwkMRz+8q+4DARVZ4dqKoyENC7FcYresjfJ6ubaOgIE35irf4w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="https://cdn.tiny.cloud/1/qusvrsktzfxlcpbo15prhhnh8bdnzr4bkhy6k9y35ilmacg6/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     @livewireScripts
+    @stack('scripts')
 </body>
 </html>

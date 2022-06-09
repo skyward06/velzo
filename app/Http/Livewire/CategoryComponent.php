@@ -52,6 +52,6 @@ class CategoryComponent extends Component
             'products' => $products,
             'categories' => $categories,
             'category_name' => $category_name,
-            ])->layout('layouts.base');
+            ]);
     }
 }
