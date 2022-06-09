@@ -44,6 +44,7 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', HomeComponent::class);
+
 // Route::view('/', 'layouts.app');
 Route::get('/cart', CartComponent::class)->name('product.cart');
 Route::get('/shop', ShopComponent::class)->name('shop');

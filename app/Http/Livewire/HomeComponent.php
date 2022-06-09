@@ -28,6 +28,6 @@ class HomeComponent extends Component
             'no_of_products' => $no_of_products,
             'sproducts' => $sproducts,
             'sale' => $sale,
-        ])->layout('layouts.base');
+        ]);
     }
 }

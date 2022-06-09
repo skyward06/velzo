@@ -55,7 +55,6 @@ class SearchComponent extends Component
 
         return view('livewire.search-component', [
             'products' => $products,
-            'categories' => $categories])
-            ->layout('layouts.base');
+            'categories' => $categories]);
     }
 }
