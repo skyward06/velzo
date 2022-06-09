@@ -1,74 +1,26 @@
 {{-- @dump(Cart::instance('cart')->content()) --}}
 <main id="main" class="flex p-5 space-x-3 bg-gray-200">
-<div class="flex flex-col w-9/12">
-    <div class="w-9/12 p-5 mt-10 bg-white">
-        <div class="flex justify-between mb-5">
-            <div class="text-2xl">Shopping Cart</div>
-            <a href="{{ route('shop') }}" class="px-4 py-2 bg-yellow-500 rounded shadow"> Shop &rarr;</a>
-        </div>
-
-        <div class="">
-        @if (Cart::instance('cart')->count() > 0)
-
-            @if (Session::has('success_message'))
-                <div class="bg-green-400">
-                    <strong>Success</strong>
-                    {{ Session::get('success_message') }}
-                </div>
-            @endif
-
-            @if (Cart::instance('cart')->count() >= 0)
-                <ul>
-                    @foreach (Cart::instance('cart')->content() as $item)
-                    <li>
-                        <hr class="border-gray-300">
-                        <div class="flex checkoutProduct" style=" margin-bottom: 20px" >
-                            <img src="{{ asset('assets/images/products') }}/{{ $item->model->image }}" alt="{{ $item->model->name }}" class="object-contain checkoutproduct__image" style="width: 180px; height: 180px;" />
-
-                            <div class="mt-8 checkoutproduct__info " style="padding-left: 20px;" >
-                                <a href="{{ route('product.details', ['slug' => $item->model->slug ]) }}" class="checkoutproduct__title" style="" >{{ $item->model->name }}</a>
-                                <p class="checkoutproduct__price">
-                                    <small> $</small>
-                                    <strong>{{ $item->model->regular_price}}</strong>
-                                </p>
-                                <div class="flex checkoutproduct__rating">
-                                    <p class="text-green-500">In Stock</p>
-                                </div>
-                                <div class="space-x-3 text-sm">
-                                    <span class="">Qty: </span>
-                                    <input class="w-10" type="text" name="product-quantity" value="{{ $item->qty }}" data-max="20" pattern="[0-9]*" >
-                                    <button class="px-3 py-2 bg-green-400 rounded-full" wire:click.prevent="increaseQty('{{ $item->rowId }}')">+</butt>
-                                    <button class="px-4 py-2 bg-yellow-400 rounded-full" wire:click.prevent="decreaseQty('{{ $item->rowId }}')">-</butt>
-                                    <button class="px-3 py-2 bg-red-400 rounded-full" wire:click.prevent="destroy('{{ $item->rowId }}')">x</butt>
-                                    <button class="px-3 py-2 text-white bg-gray-700 rounded" wire:click.prevent="switchToSaveForLater('{{ $item->rowId }}')">Save For Later</butt>
-                                </div>
-                                <div class="">
-                                </div>
-                            </div>
-                        </div>
-                    </li>
-                    @endforeach
-                </ul>
-            @else
-                <div class="">No Item in Cart</div>
-            @endif
-
-            @if(Cart::instance('cart')->content()->count() > 1)
-                <button class="px-4 py-2 font-bold bg-red-600 rounded text-md" wire:click.prevent="destroyAll()">Delete All</button>
-            @endif
-
-        @else
-            <div class="p-2 text-center">
-                <h1>Your cart is empty</h1>
-                <p class="">Add items to it now</p>
-                <a href="/shop" class="">Shop now</a>
+    <div class="flex flex-col w-9/12">
+        <div class="w-9/12 p-5 mt-10 bg-white">
+            <div class="flex justify-between mb-5">
+                <div class="text-2xl">Shopping Cart</div>
+                <a href="{{ route('shop') }}" class="px-4 py-2 bg-yellow-500 rounded shadow"> Shop &rarr;</a>
             </div>
-        @endif
+            <x-sections.cart >
+                @foreach (Cart::instance('cart')->content() as $item)
+                <x-sections.cart-list :item="$item" />
+                @endforeach
+            </x-sections.cart>
         </div>
-    </div>
 
-    <!-- Saved For Later -->
-    <x-saved-for-later />
+        <div class="w-9/12 p-5 bg-white mt-10">
+            <div class="mb-5 text-2xl">{{ Cart::instance('saveForLater')->count() }} item(s) Saved For Later</div>
+            <x-sections.saved-for-later>
+                @foreach (Cart::instance('saveForLater')->content() as $item)
+                    <x-sections.saved-for-later-item :item="$item" />
+                @endforeach
+            </x-sections.saved-for-later>
+        </div>
     </div>
 </div>
 
