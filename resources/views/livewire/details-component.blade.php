@@ -1,8 +1,3 @@
-{{-- @dump($popular_product) --}}
-{{-- @dump($related_products) --}}
-{{-- @dump($product->name) --}}
-{{-- @dump( $product->orderItems ) --}}
-
 <div class="inline-flex w-full space-x-3 p-11">
     <div class="w-2/6">
         <img src="{{ asset('assets/images/products/') }}/{{ $product->image }}" alt="" class="w-full h-80">
@@ -85,123 +80,19 @@
 
 </div>
 
-<!-- Review -->
-<div class="p-2 mx-2 bg-white">
-    <h2 class="mx-2 mt-4 mb-2 text-lg antialiased font-bold tracking-wide">
-        Review
-    </h2>
-@if ($product->orderItems->where('rstatus', 1)->count() > 0)
-    @foreach ($product->orderItems->where('rstatus', 1) as $orderItem)
-    <div class="">
-        <div class="mt-6 flex justify-start items-center flex-row space-x-2.5">
-            <div>
-                <img src="https://avatars.githubusercontent.com/u/54291811?v=4" alt="user-avatar" class="w-12 rounded-full" />
-            </div>
-            <div class="flex flex-col justify-start items-start space-y-2">
-                <p class="text-base font-medium">{{ $orderItem->order->user->name }}</p>
-                <p class="text-sm">{{ Carbon\Carbon::parse($orderItem->review->created_at)->format('d F Y')  }}</p>
-            </div>
+    <!-- Review -->
+    <x-sections.review :product="$product">
+        @forelse ($product->orderItems->where('rstatus', 1) as $orderItem)
+        <x-sections.review-item :orderItem="$orderItem" />
+        @empty
+        <div class="text-center">
+            <p class="text-sm text-gray-600">No reviews yet</p>
         </div>
+        @endforelse
+    </x-sections.review>
 
-        <div class="w-full flex py-2 space-x-4">
-            <div class="text-xl md:text-2xl font-medium leading-normal mr-4">{{ $orderItem->review->comment }}</div>
-            <div class="flex items-center">
-                @for($i = 1; $i <= 5; $i++)
-                    @if ($i <= $orderItem->review->rating)
-                    <span class="">⭐</span>
-                    @else
-                    <div class="text-base">
-                        <x-bi-star class=""/>
-                    </div>
-                    @endif
-                @endfor
-            </div>
-        </div>
-    </div>
-    @endforeach
-@else
-    <div class="text-center">
-        <p class="text-base font-medium">No Review</p>
-    </div>
-@endif
-</div>
-
-    {{-- popular products --}}
-    <div class="p-2 mx-2 bg-white">
-        <h2 class="mx-2 mt-4 mb-2 text-lg antialiased font-bold tracking-wide">
-            Popular Products
-        </h2>
-
-        {{-- carousel 1 --}}
-        <div x-data="{swiper: null}"
-        x-init="swiper = new Swiper($refs.container, {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 0,
-
-            breakpoints: {
-                640: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                },
-                768: {
-                slidesPerView: 1,
-                spaceBetween: 0,
-                },
-                1024: {
-                slidesPerView: 6,
-                spaceBetween: 0,
-                },
-            },
-            })"
-        class="relative flex flex-row w-full mx-auto">
-
-        <div class="absolute inset-y-0 left-0 z-10 flex items-center">
-            <button @click="swiper.slidePrev()"
-                    class="flex items-center justify-center w-16 h-16 ml-2 rounded shadow lg:ml-4 focus:outline-none">
-                    <x-heroicon-o-chevron-left  class="ml-1" />
-            </button>
-        </div>
-
-        <div class="swiper-container" x-ref="container">
-            <div class="swiper-wrapper">
-            <!-- Slides -->
-            <div class="p-4 swiper-slide">
-                <div class="flex flex-col overflow-hidden rounded shadow">
-                <div class="flex-shrink-0">
-                    <img class="object-cover w-full h-48" src="https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
-                </div>
-                </div>
-            </div>
-
-            @foreach ($popular_product as $pop_product)
-            <div class="p-4 swiper-slide">
-                <div class="flex flex-col overflow-hidden rounded shadow">
-                <div class="flex-shrink-0">
-                    <img class="object-cover w-full h-48" src="{{ asset('assets/images/products/') }}/{{ $pop_product->image }}" alt="">
-                </div>
-                <h1>{{ $pop_product->name }}</h1>
-                </div>
-            </div>
-            @endforeach
-
-            <div class="p-4 swiper-slide">
-                <div class="flex flex-col overflow-hidden rounded shadow">
-                <div class="flex-shrink-0">
-                    <img class="object-cover w-full h-48" src="https://images.pexels.com/photos/3184454/pexels-photo-3184454.jpeg?auto=compress&cs=tinysrgb&dpr=3&h=750&w=1260" alt="">
-                </div>
-                </div>
-            </div>
-            </div>
-        </div>
-
-        <div class="absolute inset-y-0 right-0 z-10 flex items-center">
-            <button @click="swiper.slideNext()"
-                    class="flex items-center justify-center w-16 h-16 mr-2 rounded shadow lg:mr-4 focus:outline-none">
-                <x-heroicon-o-chevron-right class="" />
-            </button>
-        </div>
-    </div>
+    <!-- popular products -->
+    <x-products.popular :popular_product="$popular_product" />
 
     {{-- Related products --}}
     <div class="p-2 mx-2 bg-white">

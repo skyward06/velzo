@@ -49,6 +49,6 @@ class DetailsComponent extends Component
             'popular_product' => $popular_products,
             'related_products' => $related_products,
             'sale' => $sale,
-        ])->layout('layouts.base');
+        ]);
     }
 }

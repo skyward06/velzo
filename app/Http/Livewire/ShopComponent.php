@@ -69,6 +69,6 @@ class ShopComponent extends Component
         // dd($categories);
         // $page_title = 'International Shopping';
 
-        return view('livewire.shop-component', ['products' => $products, 'categories'=>$categories])->layout('layouts.base');
+        return view('livewire.shop-component', ['products' => $products, 'categories'=>$categories]);
     }
 }
