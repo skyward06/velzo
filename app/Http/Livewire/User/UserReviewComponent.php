@@ -46,6 +46,6 @@ class UserReviewComponent extends Component
     public function render()
     {
         $order_item = OrderItem::find($this->order_item_id);
-        return view('livewire.user.user-review-component', ['orderItem' => $order_item])->layout('layouts.base');
+        return view('livewire.user.user-review-component', ['orderItem' => $order_item]);
     }
 }
