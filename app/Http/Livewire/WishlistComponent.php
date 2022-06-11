@@ -9,8 +9,7 @@ class WishlistComponent extends Component
 {
     public function render()
     {
-        // dd('wishlist');
-        return view('livewire.wishlist-component')->layout('layouts.base');
+        return view('livewire.wishlist-component');
     }
 
     public function moveProductFromWishlistToCart($rowId)

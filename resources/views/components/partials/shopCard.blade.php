@@ -8,10 +8,9 @@
 
     <div class="carousel" data-flickity='{ "freeScroll": true, "wrapAround": true }'>
         @foreach ($latestProducts as $latestProduct)
-        @dump($latestProduct)
-        {{-- <a href="{{ route('product.details', ['slug' => $latestProduct->slug]) }}" class="p-4">
+        <a href="{{ route('product.details', ['slug' => $latestProduct->slug]) }}" class="p-4">
             <img class="h-48" src="{{ asset('assets/images/products') }}/{{ $latestProduct->image }}" alt="">
-        </a> --}}
+        </a>
         @endforeach
     </div>
 </section>
