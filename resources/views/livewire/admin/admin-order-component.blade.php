@@ -5,7 +5,6 @@
         <div class="w-full mx-auto bg-white border border-gray-200 rounded-sm shadow-lg max-w-7xl">
             <header class="flex justify-around px-5 py-4 border-b border-gray-100">
                 <h2 class="font-semibold text-gray-800">Orders</h2>
-                <a href="{{ route('admin.addproduct') }}" class="text-green-500 underline">Add New</a>
             </header>
             <div class="p-3">
                 @if (session()->has('message'))

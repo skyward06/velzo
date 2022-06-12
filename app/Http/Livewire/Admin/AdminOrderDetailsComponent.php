@@ -22,6 +22,6 @@ class AdminOrderDetailsComponent extends Component
         // dd($order);
         return view('livewire.admin.admin-order-details-component', [
             'order' => $order
-        ])->layout('layouts.base');
+        ]);
     }
 }

@@ -10,7 +10,7 @@ class AdminCouponsComponent extends Component
     public function render()
     {
         $coupons = Coupon::all();
-        return view('livewire.admin.admin-coupons-component', ['coupons' => $coupons])->layout('layouts.base');
+        return view('livewire.admin.admin-coupons-component', ['coupons' => $coupons]);
     }
 
     public function deleteCoupon(Coupon $coupon_id)
