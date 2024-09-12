@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "2219fa3628963e412a1db6970d00bff9",
+    "content-hash": "14372a1f9dbcb55948ccfbb74c309467",
     "packages": [
         {
             "name": "asm89/stack-cors",
@@ -3881,16 +3881,16 @@
         },
         {
             "name": "stripe/stripe-php",
-            "version": "v8.6.0",
+            "version": "v15.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/stripe/stripe-php.git",
-                "reference": "d8ce03ae74d012d108f2338214444f24d94c2496"
+                "reference": "5ed133fa45987771f80ad300be2316c05832f6a7"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/d8ce03ae74d012d108f2338214444f24d94c2496",
-                "reference": "d8ce03ae74d012d108f2338214444f24d94c2496",
+                "url": "https://api.github.com/repos/stripe/stripe-php/zipball/5ed133fa45987771f80ad300be2316c05832f6a7",
+                "reference": "5ed133fa45987771f80ad300be2316c05832f6a7",
                 "shasum": ""
             },
             "require": {
@@ -3902,8 +3902,7 @@
             "require-dev": {
                 "friendsofphp/php-cs-fixer": "3.5.0",
                 "phpstan/phpstan": "^1.2",
-                "phpunit/phpunit": "^5.7 || ^9.0",
-                "squizlabs/php_codesniffer": "^3.3"
+                "phpunit/phpunit": "^5.7 || ^9.0"
             },
             "type": "library",
             "extra": {
@@ -3935,9 +3934,9 @@
             ],
             "support": {
                 "issues": "https://github.com/stripe/stripe-php/issues",
-                "source": "https://github.com/stripe/stripe-php/tree/v8.6.0"
+                "source": "https://github.com/stripe/stripe-php/tree/v15.8.0"
             },
-            "time": "2022-06-08T16:13:12+00:00"
+            "time": "2024-08-29T21:58:14+00:00"
         },
         {
             "name": "symfony/console",
